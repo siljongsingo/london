@@ -302,6 +302,41 @@ a{color:inherit;text-decoration:none}
 .tk-outer{background:var(--blue-bg);color:var(--blue)}
 .webbtn{display:inline-flex;align-items:center;gap:2px;padding:3px 7px;border-radius:4px;background:#f0fdf4;color:#166534;font-size:10px;font-weight:600}
 .pr-links{display:flex;gap:4px;flex-wrap:wrap}
+
+/* TRANSPORT SECTION */
+.pay-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:4px}
+.pay-table th{background:var(--text);color:#fff;padding:8px 10px;font-size:10px;font-weight:600;letter-spacing:0.3px;text-align:center}
+.pay-table th:first-child{text-align:left;border-radius:6px 0 0 0}
+.pay-table th:last-child{border-radius:0 6px 0 0}
+.pay-table td{padding:7px 10px;border-bottom:1px solid var(--border);text-align:center;font-size:11px}
+.pay-table td:first-child{text-align:left;font-weight:600;color:var(--text)}
+.pay-table tr:last-child td:first-child{border-radius:0 0 0 6px}
+.pay-table tr:last-child td:last-child{border-radius:0 0 6px 0}
+.pay-table tr:hover td{background:#fafaf7}
+.tx-ok{color:var(--teal);font-weight:700;font-size:13px}
+.tx-no{color:var(--hint);font-size:13px}
+.tx-app{font-size:10px;color:var(--blue);font-weight:600}
+.tr-section{background:var(--card);border-radius:var(--r);border:1px solid var(--border);margin-bottom:10px;overflow:hidden}
+.tr-section-h{padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px}
+.tr-section-title{font-size:13px;font-weight:700}
+.tr-rows{padding:0 14px}
+.tr-row{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;gap:8px}
+.tr-row:last-child{border-bottom:none}
+.tr-key{color:var(--muted);flex-shrink:0;min-width:80px}
+.tr-val{font-weight:500;text-align:right;line-height:1.5}
+.tr-note{margin:8px 14px 12px;font-size:11px;color:var(--muted);background:var(--bg);padding:7px 10px;border-radius:7px;line-height:1.6}
+.app-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px 14px}
+.app-card{background:var(--bg);border-radius:8px;padding:10px 12px;border:1px solid var(--border)}
+.app-icon{font-size:20px;margin-bottom:4px}
+.app-name{font-size:12px;font-weight:700;margin-bottom:2px}
+.app-desc{font-size:10px;color:var(--muted);line-height:1.4}
+.checklist{padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.cl-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;padding:6px 8px;background:var(--bg);border-radius:7px}
+.cl-icon{flex-shrink:0;font-size:14px;margin-top:1px}
+@media(min-width:768px){
+  .app-grid{grid-template-columns:repeat(4,1fr)}
+  .pay-table td,.pay-table th{padding:9px 14px}
+}
 </style>
 </head>
 <body>
@@ -335,6 +370,7 @@ a{color:inherit;text-decoration:none}
     <button class="sb-btn on" onclick="switchPanel('eta')"><span class="sb-btn-icon">🇬🇧</span>ETA 신청</button>
     <button class="sb-btn" onclick="switchPanel('flight')"><span class="sb-btn-icon">✈️</span>항공편</button>
     <button class="sb-btn" onclick="switchPanel('hotel')"><span class="sb-btn-icon">🏨</span>숙소</button>
+    <button class="sb-btn" onclick="switchPanel('transport')"><span class="sb-btn-icon">🚇</span>현지 교통</button>
     <button class="sb-btn" onclick="switchPanel('places')"><span class="sb-btn-icon">📍</span>관광지</button>
   </nav>
   <div class="sb-footer">d'strict · London Business Trip 2026</div>
@@ -373,6 +409,7 @@ a{color:inherit;text-decoration:none}
       <button class="tb-btn on" onclick="switchPanel('eta')"><span class="tb-btn-icon">🇬🇧</span><span class="tb-btn-label">ETA</span></button>
       <button class="tb-btn" onclick="switchPanel('flight')"><span class="tb-btn-icon">✈️</span><span class="tb-btn-label">항공</span></button>
       <button class="tb-btn" onclick="switchPanel('hotel')"><span class="tb-btn-icon">🏨</span><span class="tb-btn-label">숙소</span></button>
+      <button class="tb-btn" onclick="switchPanel('transport')"><span class="tb-btn-icon">🚇</span><span class="tb-btn-label">교통</span></button>
       <button class="tb-btn" onclick="switchPanel('places')"><span class="tb-btn-icon">📍</span><span class="tb-btn-label">관광지</span></button>
     </nav>
   </div>
@@ -568,7 +605,7 @@ a{color:inherit;text-decoration:none}
             <div class="cs"><div class="cs-time">11–13시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">대한항공<br>12:25 체크인</div></div>
             <div class="cs"><div class="cs-time">13–16시</div><div class="cs-bar" style="background:#10b981"></div><div class="cs-status" style="color:#10b981">🟢여유</div><div class="cs-note">오후<br>한산</div></div>
           </div>
-          <div class="cg-note">💡 아시아나 07:50편: 새벽 5시~6시 체크인. 인천 1터미널(아시아나) / 2터미널(대한항공)</div>
+          <div class="cg-note">💡 아시아나 07:50편: 새벽 5~6시 체크인 — 인천공항 <strong>제1터미널</strong>(아시아나) / 대한항공은 <strong>제2터미널</strong></div>
         </div>
 
         <div class="cg-wrap">
@@ -598,7 +635,7 @@ a{color:inherit;text-decoration:none}
             <div class="tc-row"><span class="tc-key">요금 (Oyster)</span><span class="tc-val">£9.60~12.80</span></div>
             <div class="tc-row"><span class="tc-key">탑승→하차</span><span class="tc-val">Heathrow T2&3 → TCR역</span></div>
           </div>
-          <div class="tc-note">아시아나 T2 도착 시 동일 역사에서 바로 탑승. TCR역 하차 후 Hoxton 도보 5분.</div>
+          <div class="tc-note">아시아나 히드로 T2 도착 시 동일 역사에서 바로 탑승. TCR역 하차 후 Hoxton 도보 5분.</div>
         </div>
         <div class="tc">
           <div class="tc-h"><div class="tc-name">🔵 Piccadilly Line</div><span style="font-size:10px;color:var(--muted)">£6.70 · 55분</span></div>
@@ -692,6 +729,170 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- ▣ 현지 교통 -->
+    <div id="p-transport" class="panel">
+      <div class="content-title"><span class="content-title-icon">🚇</span>런던 현지 교통 가이드</div>
+
+      <!-- 결제수단 요약표 -->
+      <div class="sl">💳 결제 수단 한눈에 보기</div>
+      <div style="overflow-x:auto;border-radius:var(--r);border:1px solid var(--border)">
+        <table class="pay-table">
+          <thead>
+            <tr>
+              <th>결제 수단</th>
+              <th>지하철</th>
+              <th>버스</th>
+              <th>블랙캡</th>
+              <th>Uber/Bolt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>📱 삼성페이</td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-app">앱 등록</span></td>
+            </tr>
+            <tr>
+              <td>📱 애플페이</td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-app">앱 등록</span></td>
+            </tr>
+            <tr>
+              <td>💳 컨택리스 카드</td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-app">앱 등록</span></td>
+            </tr>
+            <tr>
+              <td>🟡 Oyster 카드</td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-ok">✅</span></td>
+              <td><span class="tx-no">—</span></td>
+              <td><span class="tx-no">—</span></td>
+            </tr>
+            <tr>
+              <td>💵 현금</td>
+              <td><span class="tx-no">❌</span></td>
+              <td><span class="tx-no">❌</span></td>
+              <td><span class="tx-ok">✅ 일부</span></td>
+              <td><span class="tx-no">❌</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-size:11px;color:var(--teal);font-weight:600;margin-top:6px;padding:6px 10px;background:var(--teal-bg);border-radius:7px;margin-bottom:14px">
+        💡 삼성페이·애플페이가 있으면 Oyster 카드 구매 불필요 — TfL 노란 단말기에 폰 태그만으로 OK
+      </div>
+
+      <!-- 지하철 -->
+      <div class="sl">🚇 지하철 (Tube / Elizabeth Line)</div>
+      <div class="tr-section">
+        <div class="tr-section-h">
+          <span style="font-size:18px">🚇</span>
+          <div class="tr-section-title">Underground · Elizabeth Line · Overground</div>
+        </div>
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">삼성·애플페이</span><span class="tr-val" style="color:var(--teal);font-weight:700">✅ 모든 노선 사용 가능</span></div>
+          <div class="tr-row"><span class="tr-key">Zone 1-2 요금</span><span class="tr-val">off-peak £2.80 / peak £3.70</span></div>
+          <div class="tr-row"><span class="tr-key">일일 상한선</span><span class="tr-val">Zone 1-2 약 £8.10 — 자동 적용</span></div>
+          <div class="tr-row"><span class="tr-key">주간 상한선</span><span class="tr-val">자동 적용 (월~일 기준)</span></div>
+          <div class="tr-row"><span class="tr-key">태그 방법</span><span class="tr-val">🚨 탑승 시 + 하차 시 모두 태그 필수</span></div>
+          <div class="tr-row"><span class="tr-key">Oyster 구매</span><span class="tr-val">역내 자동판매기, 보증금 £7</span></div>
+        </div>
+        <div class="tr-note">⚠️ <strong>하차 태그 미스</strong> 시 최대 요금 £8.50 이상 부과됨. 동일 카드·기기로 계속 사용해야 일일 상한선 적용. 다른 카드 혼용 금지.</div>
+      </div>
+
+      <!-- 버스 -->
+      <div class="sl">🚌 버스 (Bus)</div>
+      <div class="tr-section">
+        <div class="tr-section-h">
+          <span style="font-size:18px">🚌</span>
+          <div class="tr-section-title">런던 버스</div>
+          <span class="tag" style="background:var(--red-bg);color:var(--red);margin-left:auto;font-size:10px;padding:2px 8px;border-radius:4px;font-weight:700">현금 완전 불가</span>
+        </div>
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">삼성·애플페이</span><span class="tr-val" style="color:var(--teal);font-weight:700">✅ 사용 가능</span></div>
+          <div class="tr-row"><span class="tr-key">단일 요금</span><span class="tr-val">£1.75 / 1회 탑승</span></div>
+          <div class="tr-row"><span class="tr-key">환승 혜택</span><span class="tr-val">1시간 내 재탑승 무료 (Hopper fare)</span></div>
+          <div class="tr-row"><span class="tr-key">태그 방법</span><span class="tr-val">탑승 시 1회만 태그 (하차 태그 불필요)</span></div>
+        </div>
+        <div class="tr-note">버스는 지하철 일일 상한선과 별도 계산됨. 지하철과 함께 쓸 경우 버스 요금이 추가로 청구됨.</div>
+      </div>
+
+      <!-- 택시 -->
+      <div class="sl">🚕 택시</div>
+      <div class="tr-section">
+        <div class="tr-section-h"><span style="font-size:18px">🖤</span><div class="tr-section-title">블랙캡 (Black Cab — 공식 택시)</div></div>
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">삼성·애플페이</span><span class="tr-val" style="color:var(--teal);font-weight:700">✅ 대부분 가능</span></div>
+          <div class="tr-row"><span class="tr-key">이용 방법</span><span class="tr-val">길에서 손 들어 바로 탑승 가능</span></div>
+          <div class="tr-row"><span class="tr-key">앱 호출</span><span class="tr-val">Gett · FREE NOW · Bolt</span></div>
+          <div class="tr-row"><span class="tr-key">특징</span><span class="tr-val">공식 미터기 사용, 가장 안전</span></div>
+        </div>
+      </div>
+      <div class="tr-section">
+        <div class="tr-section-h"><span style="font-size:18px">🚗</span><div class="tr-section-title">Uber</div></div>
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">한국 카드</span><span class="tr-val" style="color:var(--teal);font-weight:700">✅ 앱 등록 후 사용 가능</span></div>
+          <div class="tr-row"><span class="tr-key">삼성·애플페이</span><span class="tr-val">앱 내 카드로 자동 결제</span></div>
+          <div class="tr-row"><span class="tr-key">장점</span><span class="tr-val">사전 요금 확인 가능 / 블랙캡보다 저렴</span></div>
+        </div>
+      </div>
+      <div class="tr-section">
+        <div class="tr-section-h"><span style="font-size:18px">🚙</span><div class="tr-section-title">Bolt <span style="font-size:11px;font-weight:400;color:var(--muted)">— Uber 대안, 더 저렴</span></div></div>
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">한국 카드</span><span class="tr-val" style="color:var(--teal);font-weight:700">✅ 앱 등록 후 사용 가능</span></div>
+          <div class="tr-row"><span class="tr-key">특징</span><span class="tr-val">Uber보다 평균 10~20% 저렴</span></div>
+        </div>
+      </div>
+
+      <!-- 필수 앱 -->
+      <div class="sl">📱 필수 앱</div>
+      <div class="tr-section">
+        <div class="app-grid">
+          <div class="app-card">
+            <div class="app-icon">🗺</div>
+            <div class="app-name">Citymapper</div>
+            <div class="app-desc">런던 최고의 대중교통 내비. 실시간 경로·지연 정보. 사전 설치 강력 권장</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon">🚇</div>
+            <div class="app-name">TfL Go</div>
+            <div class="app-desc">TfL 공식 앱. 지하철·버스·Elizabeth Line 실시간 운행 현황</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon">🚗</div>
+            <div class="app-name">Uber</div>
+            <div class="app-desc">한국 카드 사전 등록 필요. 출발 전 반드시 로그인·카드 등록 완료</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon">🚙</div>
+            <div class="app-name">Bolt</div>
+            <div class="app-desc">Uber 대안. 저렴한 요금. 한국 카드 앱 등록 후 사용</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 출발 전 체크리스트 -->
+      <div class="sl">✅ 출발 전 체크리스트</div>
+      <div class="tr-section">
+        <div class="checklist">
+          <div class="cl-item"><span class="cl-icon">💳</span><span>한국 신용카드 <strong>해외 결제 활성화</strong> 확인 (카드사 앱 또는 고객센터)</span></div>
+          <div class="cl-item"><span class="cl-icon">📱</span><span>삼성페이·애플페이에 <strong>해외 결제 가능 카드 등록</strong> 확인</span></div>
+          <div class="cl-item"><span class="cl-icon">🚗</span><span>Uber·Bolt 앱 <strong>사전 설치 및 카드 등록</strong> 완료</span></div>
+          <div class="cl-item"><span class="cl-icon">🗺</span><span>Citymapper 앱 설치 (오프라인 지도 저장 가능)</span></div>
+          <div class="cl-item"><span class="cl-icon">⚠️</span><span>지하철: <strong>탑승·하차 모두 태그</strong> / 버스: 탑승 시만 태그 (혼동 주의)</span></div>
+          <div class="cl-item"><span class="cl-icon">🔁</span><span>일일 상한선 혜택 위해 <strong>같은 카드·기기로만 사용</strong> (혼용 금지)</span></div>
+        </div>
+      </div>
+
     </div>
 
     <!-- ▣ 관광지 -->
@@ -998,7 +1199,7 @@ a{color:inherit;text-decoration:none}
 </main>
 </div><!-- /page -->
 <script>
-var panels=['eta','flight','hotel','places'];
+var panels=['eta','flight','hotel','transport','places'];
 
 /* ── 핵심 수정: topbar 실제 높이 동적 측정 ── */
 function fixTopPadding(){
