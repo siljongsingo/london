@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼성기증전 관련 영국 런던 출장</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+:root{
+  --font:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic','맑은 고딕',Arial,sans-serif;
+  --bg:#f6f5f0;--card:#fff;--border:#e8e6df;
+  --text:#1a1a18;--muted:#73726c;--hint:#a3a29c;
+  --blue:#185FA5;--blue-bg:#E6F1FB;
+  --red:#A32D2D;--red-bg:#FCEBEB;
+  --green:#3B6D11;--green-bg:#EAF3DE;
+  --purple:#534AB7;--purple-bg:#EEEDFE;
+  --teal:#0F6E56;--teal-bg:#E1F5EE;
+  --amber:#854F0B;--amber-bg:#FAEEDA;
+  --r:10px;
+  --sidebar:220px;
+  --topbar-mobile:180px;
+  --topbar-tablet:110px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;font-weight:300;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* ═══════════════════════════════════════
+   LAYOUT SKELETON
+═══════════════════════════════════════ */
+.page{display:flex;min-height:100vh}
+
+/* ── SIDEBAR (desktop only) ── */
+.sidebar{
+  display:none;
+  width:var(--sidebar);flex-shrink:0;
+  background:#1a1a2e;color:#fff;
+  position:fixed;top:0;left:0;bottom:0;
+  flex-direction:column;z-index:200;
+  overflow-y:auto;
+}
+.sb-header{padding:20px 18px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sb-flag{margin-bottom:10px}
+.sb-title{font-size:13px;font-weight:700;letter-spacing:-0.2px;line-height:1.4;color:#fff}
+.sb-meta{margin-top:8px;display:flex;flex-direction:column;gap:4px}
+.sb-chip{display:inline-flex;padding:2px 8px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);
+         border-radius:20px;font-size:10px;font-weight:600;width:fit-content}
+.sb-travelers{padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sb-tv{display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.7);padding:3px 0}
+.sb-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sb-nav{padding:12px 10px;flex:1}
+.sb-btn{width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;
+        border:none;background:none;color:rgba(255,255,255,.6);cursor:pointer;
+        border-radius:8px;font-family:var(--font);font-size:13px;font-weight:500;
+        transition:all .15s;text-align:left;margin-bottom:2px}
+.sb-btn-icon{font-size:18px;flex-shrink:0}
+.sb-btn:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.9)}
+.sb-btn.on{background:var(--purple);color:#fff}
+.sb-footer{padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);font-size:10px;color:rgba(255,255,255,.3)}
+
+/* ── MAIN AREA ── */
+.main{flex:1;min-width:0}
+
+/* ── TOP BAR (mobile/tablet) ── */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:#1a1a2e;
+}
+.tb-hdr{padding:10px 14px 8px;display:flex;align-items:center;gap:10px}
+.tb-flag{flex-shrink:0}
+.tb-text{flex:1;min-width:0}
+.tb-title{font-size:13px;font-weight:700;letter-spacing:-0.2px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-sub{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}
+.tb-chip{display:inline-flex;padding:1px 7px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);
+         border-radius:20px;font-size:10px;font-weight:600}
+.tb-travelers{padding:0 14px 8px;display:flex;gap:12px;flex-wrap:wrap}
+.tb-tv{display:flex;align-items:center;gap:5px;font-size:10px;color:rgba(255,255,255,.7)}
+.tb-dot{width:6px;height:6px;border-radius:50%}
+.tb-nav{background:#fff;border-bottom:1px solid var(--border);display:flex;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.tb-btn{flex:1;display:flex;flex-direction:column;align-items:center;padding:7px 2px;
+        border:none;background:none;cursor:pointer;font-family:var(--font);
+        border-bottom:2px solid transparent;gap:1px}
+.tb-btn-icon{font-size:18px;line-height:1}
+.tb-btn-label{font-size:9px;font-weight:600;color:var(--hint)}
+.tb-btn.on{border-bottom-color:var(--purple)}
+.tb-btn.on .tb-btn-label{color:var(--purple)}
+
+/* ── CONTENT AREA ── */
+.content{
+  padding:190px 14px 40px;
+}
+.panel{display:none}.panel.on{display:block}
+
+/* ═══════════════════════════════════════
+   COMPONENTS
+═══════════════════════════════════════ */
+
+/* SECTION LABEL */
+.sl{font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--hint);text-transform:uppercase;
+    margin-bottom:8px;margin-top:20px;display:flex;align-items:center;gap:6px}
+.sl:first-child{margin-top:0}
+.sl::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* DATE TABS */
+.dtabs{display:flex;background:var(--card);border-radius:var(--r);border:1px solid var(--border);padding:3px;gap:3px;margin-bottom:12px}
+.dtab{flex:1;padding:8px 6px;font-size:11px;font-weight:600;color:var(--muted);border:none;background:none;
+      border-radius:7px;cursor:pointer;font-family:var(--font);transition:all .15s;text-align:center;line-height:1.4}
+.dtab.on{background:var(--purple);color:#fff}
+.dtab .pdiff{display:block;font-size:9px;font-weight:400;margin-top:1px;opacity:.8}
+.dpanel{display:none}.dpanel.on{display:block}
+
+/* PRICE BANNER */
+.pcmp{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;
+      margin-bottom:12px;font-size:11px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+
+/* FLIGHT CARD */
+.fc{background:var(--card);border-radius:var(--r);border:1.5px solid var(--border);margin-bottom:10px;overflow:hidden}
+.fc.best-time{border-color:var(--teal)}
+.fc.best-dur{border-color:var(--purple)}
+.fc-top{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.fc-airline{font-size:13px;font-weight:700}
+.fc-tags{display:flex;gap:4px;flex-wrap:wrap}
+.tag{display:inline-flex;align-items:center;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600}
+.tt{background:var(--teal-bg);color:var(--teal)}
+.tp{background:var(--purple-bg);color:var(--purple)}
+.fc-routes{padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.route{display:flex;align-items:center;gap:6px}
+.r-label{font-size:9px;font-weight:700;color:var(--hint);width:22px;flex-shrink:0}
+.r-time{font-size:16px;font-weight:700;letter-spacing:-0.4px;min-width:40px}
+.r-ap{font-size:10px;color:var(--muted);font-weight:500}
+.r-arrow{flex:1;display:flex;align-items:center;justify-content:center;gap:3px}
+.r-line{flex:1;height:1px;background:var(--border)}
+.r-dur{font-size:9px;color:var(--muted);font-weight:600;white-space:nowrap}
+.r-plus{font-size:8px;color:var(--red);font-weight:700;vertical-align:super}
+.fc-bottom{padding:8px 14px;background:var(--bg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.fc-prices{display:flex;gap:10px;align-items:center}
+.fc-price-item{text-align:center}
+.fc-price-day{font-size:9px;font-weight:600;color:var(--hint);margin-bottom:1px}
+.fc-price{font-size:13px;font-weight:700;letter-spacing:-0.2px}
+.fc-price.p27{color:var(--purple)}
+.fc-price.p28{color:var(--blue)}
+.fc-price-div{width:1px;height:28px;background:var(--border)}
+.fc-arrival{font-size:10px;font-weight:600;text-align:right;line-height:1.4}
+.fc-arrival.ok{color:var(--teal)}
+.fc-arrival.warn{color:var(--amber)}
+.fc-arrival.neutral{color:var(--muted)}
+
+/* CONGESTION */
+.cg-wrap{background:var(--card);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;margin-bottom:10px}
+.cg-title{padding:9px 14px;font-size:11px;font-weight:700;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px}
+.cg-slots{display:grid;grid-template-columns:repeat(5,1fr)}
+.cs{padding:9px 3px;text-align:center;border-right:1px solid var(--border)}
+.cs:last-child{border-right:none}
+.cs-time{font-size:8px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.cs-bar{height:4px;border-radius:2px;margin:0 4px 4px}
+.cs-status{font-size:9px;font-weight:700;line-height:1.2}
+.cs-note{font-size:8px;color:var(--hint);margin-top:3px;line-height:1.3}
+.cg-note{padding:8px 12px;font-size:11px;color:var(--muted);background:var(--bg);border-top:1px solid var(--border)}
+
+/* TRANSPORT */
+.tc{background:var(--card);border-radius:var(--r);border:1.5px solid var(--border);margin-bottom:10px;overflow:hidden}
+.tc.best{border-color:var(--purple)}
+.tc-h{padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.tc-name{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+.tc-rows{padding:0 14px}
+.tc-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px}
+.tc-row:last-child{border-bottom:none}
+.tc-key{color:var(--muted)}
+.tc-val{font-weight:600;text-align:right}
+.tc-note{margin:8px 14px 12px;font-size:11px;color:var(--muted);background:var(--bg);padding:7px 10px;border-radius:7px;line-height:1.5}
+
+/* HOTEL GRID */
+.hotel-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.hc{background:var(--card);border-radius:var(--r);border:1.5px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+.hc.best{border-color:var(--purple)}
+.hc-top{padding:13px 14px;border-bottom:1px solid var(--border)}
+.hc-rank-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.hc-rank{font-size:10px;font-weight:700}
+.hc-name{font-size:15px;font-weight:700;letter-spacing:-0.3px;margin-bottom:2px}
+.hc-area{font-size:11px;color:var(--muted)}
+.hc-rating{display:flex;align-items:center;gap:5px;margin-top:6px}
+.stars{color:#f59e0b;font-size:12px}
+.rv{font-size:13px;font-weight:700}
+.rc{font-size:11px;color:var(--hint)}
+.hc-feats{padding:10px 14px;border-bottom:1px solid var(--border);flex:1;display:flex;flex-direction:column;gap:5px}
+.hc-feat{font-size:12px;color:var(--muted);display:flex;gap:6px}
+.hc-bottom{padding:10px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.hc-links{display:flex;gap:6px;flex-wrap:wrap}
+.lbtn{display:inline-flex;align-items:center;gap:3px;padding:5px 10px;border-radius:7px;font-size:11px;font-weight:600}
+.lb-map{background:var(--blue-bg);color:var(--blue)}
+.lb-agoda{background:#dbeafe;color:#1d4ed8}
+.hc-price{font-size:16px;font-weight:700;letter-spacing:-0.3px}
+.hc-price.p1{color:var(--purple)}
+.hc-price.p2{color:var(--teal)}
+.hc-price.p3{color:var(--blue)}
+
+/* PLACES GRID */
+.places-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.pc{background:var(--card);border-radius:var(--r);border:1px solid var(--border);overflow:hidden}
+.pc-h{padding:10px 14px;font-size:11px;font-weight:700;letter-spacing:0.3px;display:flex;align-items:center;gap:6px}
+.pc-h.landmark{background:var(--blue-bg);color:var(--blue)}
+.pc-h.art{background:var(--purple-bg);color:var(--purple)}
+.pr{display:flex;align-items:center;padding:9px 14px;border-bottom:1px solid var(--border);gap:8px}
+.pr:last-child{border-bottom:none}
+.pr-icon{font-size:17px;flex-shrink:0;line-height:1}
+.pr-info{flex:1;min-width:0}
+.pr-name{font-size:13px;font-weight:400;line-height:1.3}
+.pr-name.main{font-weight:700;color:var(--purple)}
+.pr-cat{font-size:10px;color:var(--hint)}
+.pr-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
+.pa{display:inline-flex;align-items:center;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;white-space:nowrap}
+.pa.walk{background:var(--teal-bg);color:var(--teal)}
+.pa.tube{background:var(--amber-bg);color:var(--amber)}
+.pa.main-tag{background:var(--purple-bg);color:var(--purple)}
+.mapbtn{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:4px;background:var(--blue-bg);color:var(--blue);font-size:10px;font-weight:600}
+
+/* ETA */
+.eta-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);color:#fff;border-radius:var(--r);padding:18px;margin-bottom:12px}
+.eta-htitle{font-size:17px;font-weight:700;margin-bottom:3px}
+.eta-hsub{font-size:11px;color:rgba(255,255,255,.55);margin-bottom:14px}
+.eta-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.es{background:rgba(255,255,255,.08);border-radius:8px;padding:10px 12px;text-align:center}
+.es-val{font-size:16px;font-weight:700}
+.es-label{font-size:10px;color:rgba(255,255,255,.5);margin-top:2px}
+.step-card{background:var(--card);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;margin-bottom:10px}
+.step{display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid var(--border);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.step-title{font-size:13px;font-weight:700;margin-bottom:2px}
+.step-desc{font-size:12px;color:var(--muted);line-height:1.5}
+.step-link{display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:5px 11px;background:var(--purple-bg);color:var(--purple);border-radius:6px;font-size:11px;font-weight:600}
+.eta-alert{background:var(--amber-bg);border:1px solid #d97706;border-radius:var(--r);padding:12px 14px;font-size:12px;color:var(--amber);display:flex;gap:8px;margin-bottom:10px}
+
+/* TRANSPORT GRID */
+.transport-grid{display:grid;grid-template-columns:1fr;gap:10px}
+
+/* ═══════════════════════════════════════
+   TABLET (≥ 768px)
+═══════════════════════════════════════ */
+@media(min-width:768px){
+  :root{--topbar-tablet:168px}
+  .content{padding-top:175px;padding-left:20px;padding-right:20px}
+  .tb-title{font-size:15px}
+  .hotel-grid{grid-template-columns:repeat(2,1fr)}
+  .places-grid{grid-template-columns:repeat(2,1fr)}
+  .transport-grid{grid-template-columns:repeat(2,1fr)}
+  .eta-stats{grid-template-columns:repeat(4,1fr)}
+  .fc-routes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .fc-routes .route:first-child{padding-right:12px;border-right:1px solid var(--border)}
+  .r-time{font-size:17px}
+  .dtab{font-size:12px}
+  .dtab .pdiff{font-size:10px}
+}
+
+/* ═══════════════════════════════════════
+   DESKTOP (≥ 1024px)
+═══════════════════════════════════════ */
+@media(min-width:1024px){
+  .topbar{display:none}
+  .sidebar{display:flex}
+  .main{margin-left:var(--sidebar)}
+  .content{
+    padding-top:24px;
+    padding-left:28px;
+    padding-right:28px;
+    max-width:960px;
+  }
+  .hotel-grid{grid-template-columns:repeat(3,1fr)}
+  .places-grid{grid-template-columns:repeat(2,1fr)}
+  .transport-grid{grid-template-columns:repeat(2,1fr)}
+  .flight-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  .flight-col-single{display:block}
+  .sl{margin-top:24px}
+  .fc-routes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .fc-routes .route:first-child{padding-right:12px;border-right:1px solid var(--border)}
+  .r-time{font-size:18px}
+  .dtab{font-size:13px}
+  .cg-slots{grid-template-columns:repeat(5,1fr)}
+  .step-card{display:grid;grid-template-columns:1fr 1fr}
+  .step{border-bottom:none;border-right:1px solid var(--border)}
+  .step:last-child{border-right:none}
+  .step:nth-child(even){border-right:none}
+}
+
+/* Desktop content panel title */
+.content-title{display:none}
+@media(min-width:1024px){
+  .content-title{
+    display:flex;align-items:center;gap:10px;
+    font-size:20px;font-weight:700;letter-spacing:-0.4px;
+    margin-bottom:20px;padding-bottom:16px;
+    border-bottom:2px solid var(--border);
+  }
+  .content-title-icon{font-size:24px}
+}
+
+/* TICKET BADGES */
+.tk{display:inline-flex;align-items:center;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:700;letter-spacing:0.2px;margin-top:2px}
+.tk-free{background:#dcfce7;color:#166534}
+.tk-partial{background:var(--amber-bg);color:var(--amber)}
+.tk-paid{background:#fee2e2;color:#991b1b}
+.tk-outer{background:var(--blue-bg);color:var(--blue)}
+.webbtn{display:inline-flex;align-items:center;gap:2px;padding:3px 7px;border-radius:4px;background:#f0fdf4;color:#166534;font-size:10px;font-weight:600}
+.pr-links{display:flex;gap:4px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════════════════════════
+     SIDEBAR (Desktop)
+══════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sb-header">
+    <div class="sb-flag">
+      <svg width="36" height="24" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="border-radius:3px;display:block">
+        <rect width="60" height="40" fill="#012169"/>
+        <path d="M0,0 L60,40 M60,0 L0,40" stroke="white" stroke-width="8"/>
+        <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/>
+        <path d="M30,0 L30,40 M0,20 L60,20" stroke="white" stroke-width="12"/>
+        <path d="M30,0 L30,40 M0,20 L60,20" stroke="#C8102E" stroke-width="7"/>
+      </svg>
+    </div>
+    <div class="sb-title">삼성기증전 관련 영국 런던 출장</div>
+    <div class="sb-meta">
+      <span class="sb-chip">📅 출장기간 협의중</span>
+      <span class="sb-chip">✈️ 27일 or 28일 출발</span>
+    </div>
+  </div>
+  <div class="sb-travelers">
+    <div class="sb-tv"><div class="sb-dot" style="background:#60a5fa"></div><span><strong style="color:#93c5fd">김지훈</strong> — 26·27일 출발</span></div>
+    <div class="sb-tv"><div class="sb-dot" style="background:#34d399"></div><span><strong style="color:#6ee7b7">김영민</strong> — 28일~ 출발</span></div>
+  </div>
+  <nav class="sb-nav">
+    <button class="sb-btn on" onclick="switchPanel('eta')"><span class="sb-btn-icon">🇬🇧</span>ETA 신청</button>
+    <button class="sb-btn" onclick="switchPanel('flight')"><span class="sb-btn-icon">✈️</span>항공편</button>
+    <button class="sb-btn" onclick="switchPanel('hotel')"><span class="sb-btn-icon">🏨</span>숙소</button>
+    <button class="sb-btn" onclick="switchPanel('places')"><span class="sb-btn-icon">📍</span>관광지</button>
+  </nav>
+  <div class="sb-footer">d'strict · London Business Trip 2026</div>
+</aside>
+
+<!-- ══════════════════════════════
+     MAIN
+══════════════════════════════ -->
+<main class="main">
+
+  <!-- TOPBAR (Mobile/Tablet) -->
+  <div class="topbar">
+    <div class="tb-hdr">
+      <div class="tb-flag">
+        <svg width="28" height="19" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px;display:block">
+          <rect width="60" height="40" fill="#012169"/>
+          <path d="M0,0 L60,40 M60,0 L0,40" stroke="white" stroke-width="8"/>
+          <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/>
+          <path d="M30,0 L30,40 M0,20 L60,20" stroke="white" stroke-width="12"/>
+          <path d="M30,0 L30,40 M0,20 L60,20" stroke="#C8102E" stroke-width="7"/>
+        </svg>
+      </div>
+      <div class="tb-text">
+        <div class="tb-title">삼성기증전 관련 영국 런던 출장</div>
+        <div class="tb-sub">
+          <span class="tb-chip">📅 협의중</span>
+          <span class="tb-chip">✈️ 27일 or 28일</span>
+        </div>
+      </div>
+    </div>
+    <div class="tb-travelers">
+      <div class="tb-tv"><div class="tb-dot" style="background:#60a5fa"></div><strong style="color:#93c5fd">김지훈</strong><span style="opacity:.7"> 26·27일</span></div>
+      <div class="tb-tv"><div class="tb-dot" style="background:#34d399"></div><strong style="color:#6ee7b7">김영민</strong><span style="opacity:.7"> 28일~</span></div>
+    </div>
+    <nav class="tb-nav">
+      <button class="tb-btn on" onclick="switchPanel('eta')"><span class="tb-btn-icon">🇬🇧</span><span class="tb-btn-label">ETA</span></button>
+      <button class="tb-btn" onclick="switchPanel('flight')"><span class="tb-btn-icon">✈️</span><span class="tb-btn-label">항공</span></button>
+      <button class="tb-btn" onclick="switchPanel('hotel')"><span class="tb-btn-icon">🏨</span><span class="tb-btn-label">숙소</span></button>
+      <button class="tb-btn" onclick="switchPanel('places')"><span class="tb-btn-icon">📍</span><span class="tb-btn-label">관광지</span></button>
+    </nav>
+  </div>
+
+  <!-- ══ CONTENT ══ -->
+  <div class="content">
+
+    <!-- ▣ ETA -->
+    <div id="p-eta" class="panel on">
+      <div class="content-title"><span class="content-title-icon">🇬🇧</span>UK ETA 신청 안내</div>
+
+      <div class="eta-hero">
+        <div class="eta-htitle">UK ETA — Electronic Travel Authorisation</div>
+        <div class="eta-hsub">2026년 2월 25일부터 한국 국적자 의무 취득 — 미취득 시 탑승 거부</div>
+        <div class="eta-stats">
+          <div class="es"><div class="es-val">£16</div><div class="es-label">신청 비용</div></div>
+          <div class="es"><div class="es-val">2년</div><div class="es-label">유효기간</div></div>
+          <div class="es"><div class="es-val">즉시~3일</div><div class="es-label">처리시간</div></div>
+          <div class="es"><div class="es-val">전자여권</div><div class="es-label">e-Passport 필수</div></div>
+        </div>
+      </div>
+
+      <div class="sl">📋 신청 절차</div>
+      <div class="step-card">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div><div class="step-title">전자여권 확인</div><div class="step-desc">여권 하단 카메라 아이콘(⊡) 확인. 일반 여권은 신청 불가.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">UKVI 앱 또는 웹사이트 접속</div>
+            <div class="step-desc">스마트폰 앱 권장 — 여권 NFC 스캔 + 셀카로 빠르게 완료.</div>
+            <a class="step-link" href="https://www.gov.uk/guidance/apply-for-an-electronic-travel-authorisation-eta" target="_blank">🌐 gov.uk ETA 공식 신청 →</a>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div><div class="step-title">개인정보 입력</div><div class="step-desc">성명(영문 여권 그대로), 생년월일, 여권번호, 방문 목적(Business) 입력.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div><div class="step-title">여권 스캔 & 셀카</div><div class="step-desc">앱: NFC 칩 스캔 + 셀카. 웹: 여권 사진면 + 셀카 이미지 업로드.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div><div class="step-title">£16 결제 → 이메일 승인</div><div class="step-desc">신용카드 결제 후 승인 이메일 수신. 여권에 전자 연동, 별도 출력 불필요.</div></div>
+        </div>
+      </div>
+
+      <div class="eta-alert">
+        <span style="font-size:16px;flex-shrink:0">⚠️</span>
+        <div>여권 재발급 시 ETA 재신청 필요. 출발 <strong>최소 1주일 전</strong> 신청 권장.<br>
+        <a href="https://gb.mofa.go.kr/gb-ko/brd/m_25447/view.do?seq=1345205" target="_blank" style="color:var(--amber);font-weight:700;text-decoration:underline">주영국 대한민국 대사관 공식 안내 →</a></div>
+      </div>
+    </div>
+
+    <!-- ▣ 항공 -->
+    <div id="p-flight" class="panel">
+      <div class="content-title"><span class="content-title-icon">✈️</span>항공편 스케줄</div>
+
+      <div class="pcmp">
+        <span style="font-size:15px;flex-shrink:0">💡</span>
+        <div>동일 항공편 기준 <strong>27일 출발이 약 87~205만원 저렴</strong>. 28일 탭에서 27일 대비 차액 확인 가능.</div>
+      </div>
+
+      <div class="dtabs">
+        <button class="dtab on" onclick="switchDay('d27')">📅 05.27(수) 출발<span class="pdiff">다음날 05.28 미팅 · 김지훈</span></button>
+        <button class="dtab" onclick="switchDay('d28')">📅 05.28(목) 출발<span class="pdiff">다음날 05.29 미팅 · 김영민</span></button>
+      </div>
+
+      <!-- 05.27 출발 -->
+      <div id="d27" class="dpanel on">
+        <div class="flight-cols">
+          <!-- 아시아나 ★한산 -->
+          <div class="fc best-time">
+            <div class="fc-top"><div class="fc-airline">🌸 아시아나항공</div><div class="fc-tags"><span class="tag tt">🟢 히드로 한산 도착</span></div></div>
+            <div class="fc-routes">
+              <div class="route"><span class="r-label">출국</span><span class="r-time">07:50</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h30m</span><div class="r-line"></div></div><span class="r-time">14:20</span><span class="r-ap">LHR</span></div>
+              <div class="route"><span class="r-label">귀국</span><span class="r-time">16:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h45m</span><div class="r-line"></div></div><span class="r-time">13:20<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+            </div>
+            <div class="fc-bottom">
+              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">1,585,400원~</div></div></div>
+              <div class="fc-arrival ok">✅ 14:20 도착 — 입국장 여유</div>
+            </div>
+          </div>
+          <!-- 대한항공 10:55 ★최단 -->
+          <div class="fc best-dur">
+            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
+            <div class="fc-routes">
+              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
+              <div class="route"><span class="r-label">귀국</span><span class="r-time">19:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">16:15<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+            </div>
+            <div class="fc-bottom">
+              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">2,195,200원~</div></div></div>
+              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
+            </div>
+          </div>
+          <!-- 대한항공 10:55 귀국13:25 -->
+          <div class="fc best-dur">
+            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
+            <div class="fc-routes">
+              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
+              <div class="route"><span class="r-label">귀국</span><span class="r-time">13:25</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">10:05<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+            </div>
+            <div class="fc-bottom">
+              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">2,463,600원~</div></div></div>
+              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
+            </div>
+          </div>
+          <!-- 대한항공 12:25 -->
+          <div class="fc">
+            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div></div>
+            <div class="fc-routes">
+              <div class="route"><span class="r-label">출국</span><span class="r-time">12:25</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">18:50</span><span class="r-ap">LHR</span></div>
+              <div class="route"><span class="r-label">귀국</span><span class="r-time">19:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">16:15<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+            </div>
+            <div class="fc-bottom">
+              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">2,596,400원~</div></div></div>
+              <div class="fc-arrival neutral">🟡 18:50 도착 — 혼잡 완화</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05.28 출발 -->
+      <div id="d28" class="dpanel">
+        <div class="flight-cols">
+          <!-- 아시아나 ★한산 -->
+          <div class="fc best-time">
+            <div class="fc-top"><div class="fc-airline">🌸 아시아나항공</div><div class="fc-tags"><span class="tag tt">🟢 히드로 한산 도착</span></div></div>
+            <div class="fc-routes">
+              <div class="route"><span class="r-label">출국</span><span class="r-time">07:50</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h30m</span><div class="r-line"></div></div><span class="r-time">14:20</span><span class="r-ap">LHR</span></div>
+              <div class="route"><span class="r-label">귀국</span><span class="r-time">16:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h45m</span><div class="r-line"></div></div><span class="r-time">13:20<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+            </div>
+            <div class="fc-bottom">
+              <div class="fc-prices">
+                <div class="fc-price-item"><div class="fc-price-day">28일 출발</div><div class="fc-price p28">3,630,600원~</div></div>
+                <div class="fc-price-div"></div>
+                <div class="fc-price-item"><div class="fc-price-day">27일 比</div><div class="fc-price" style="color:var(--red);font-size:11px">+2,045,200원</div></div>
+              </div>
+              <div class="fc-arrival ok">✅ 14:20 도착 — 입국장 여유</div>
+            </div>
+          </div>
+          <!-- 대한항공 10:55 ★최단 귀국19:35 -->
+          <div class="fc best-dur">
+            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
+            <div class="fc-routes">
+              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
+              <div class="route"><span class="r-label">귀국</span><span class="r-time">19:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">16:15<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+            </div>
+            <div class="fc-bottom">
+              <div class="fc-prices">
+                <div class="fc-price-item"><div class="fc-price-day">28일 출발</div><div class="fc-price p28">3,064,500원~</div></div>
+                <div class="fc-price-div"></div>
+                <div class="fc-price-item"><div class="fc-price-day">27일 比</div><div class="fc-price" style="color:var(--red);font-size:11px">+869,300원</div></div>
+              </div>
+              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
+            </div>
+          </div>
+          <!-- 대한항공 10:55 귀국13:25 -->
+          <div class="fc best-dur">
+            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
+            <div class="fc-routes">
+              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
+              <div class="route"><span class="r-label">귀국</span><span class="r-time">13:25</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">10:05<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+            </div>
+            <div class="fc-bottom">
+              <div class="fc-prices">
+                <div class="fc-price-item"><div class="fc-price-day">28일 출발</div><div class="fc-price p28">3,185,200원~</div></div>
+                <div class="fc-price-div"></div>
+                <div class="fc-price-item"><div class="fc-price-day">27일 比</div><div class="fc-price" style="color:var(--red);font-size:11px">+721,600원</div></div>
+              </div>
+              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 공항 혼잡도 -->
+      <div class="sl">⏱ 공항 혼잡도</div>
+      <div style="display:grid;grid-template-columns:1fr;gap:10px" id="cg-grid">
+
+        <div class="cg-wrap">
+          <div class="cg-title">
+            🇰🇷
+            인천공항 (ICN) 출발 혼잡도
+          </div>
+          <div class="cg-slots">
+            <div class="cs"><div class="cs-time">04–06시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">아시아나<br>체크인 시간</div></div>
+            <div class="cs"><div class="cs-time">06–09시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note">아침 출발<br>집중</div></div>
+            <div class="cs"><div class="cs-time">09–11시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note">대한항공<br>10:55 체크인</div></div>
+            <div class="cs"><div class="cs-time">11–13시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">대한항공<br>12:25 체크인</div></div>
+            <div class="cs"><div class="cs-time">13–16시</div><div class="cs-bar" style="background:#10b981"></div><div class="cs-status" style="color:#10b981">🟢여유</div><div class="cs-note">오후<br>한산</div></div>
+          </div>
+          <div class="cg-note">💡 아시아나 07:50편: 새벽 5시~6시 체크인. 인천 1터미널(아시아나) / 2터미널(대한항공)</div>
+        </div>
+
+        <div class="cg-wrap">
+          <div class="cg-title">
+            <svg width="18" height="12" viewBox="0 0 60 40" style="border-radius:2px"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="white" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 L30,40 M0,20 L60,20" stroke="white" stroke-width="12"/><path d="M30,0 L30,40 M0,20 L60,20" stroke="#C8102E" stroke-width="7"/></svg>
+            히드로공항 (LHR) 입국장 혼잡도
+          </div>
+          <div class="cg-slots">
+            <div class="cs"><div class="cs-time">06–10시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴매우혼잡</div><div class="cs-note">아침 출발편<br>집중 도착</div></div>
+            <div class="cs"><div class="cs-time">10–14시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">유럽발<br>오전편</div></div>
+            <div class="cs" style="background:#f0faf6"><div class="cs-time">14–16시</div><div class="cs-bar" style="background:#10b981"></div><div class="cs-status" style="color:#10b981">🟢여유★</div><div class="cs-note" style="color:var(--teal);font-weight:600">아시아나<br>14:20 도착</div></div>
+            <div class="cs"><div class="cs-time">16–19시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴매우혼잡</div><div class="cs-note" style="color:var(--red)">대한항공<br>17:20 도착</div></div>
+            <div class="cs"><div class="cs-time">19–22시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">저녁<br>완화 시작</div></div>
+          </div>
+          <div class="cg-note">💡 LHR 귀국 출발 혼잡도 — 아침(06-09시) 가장 혼잡. 아시아나 16:35 / 대한항공 13:25·19:35 출발은 비교적 여유.</div>
+        </div>
+
+      </div>
+
+      <!-- 공항→숙소 이동 -->
+      <div class="sl">🚇 히드로 → 숙소 이동</div>
+      <div class="transport-grid">
+        <div class="tc best">
+          <div class="tc-h"><div class="tc-name">🟣 Elizabeth Line <span class="tag tp" style="margin-left:4px;font-size:10px">추천</span></div></div>
+          <div class="tc-rows">
+            <div class="tc-row"><span class="tc-key">소요시간</span><span class="tc-val">35~40분</span></div>
+            <div class="tc-row"><span class="tc-key">요금 (Oyster)</span><span class="tc-val">£9.60~12.80</span></div>
+            <div class="tc-row"><span class="tc-key">탑승→하차</span><span class="tc-val">Heathrow T2&3 → TCR역</span></div>
+          </div>
+          <div class="tc-note">아시아나 T2 도착 시 동일 역사에서 바로 탑승. TCR역 하차 후 Hoxton 도보 5분.</div>
+        </div>
+        <div class="tc">
+          <div class="tc-h"><div class="tc-name">🔵 Piccadilly Line</div><span style="font-size:10px;color:var(--muted)">£6.70 · 55분</span></div>
+          <div class="tc-rows">
+            <div class="tc-row"><span class="tc-key">탑승→하차</span><span class="tc-val">전 터미널 → Holborn역</span></div>
+          </div>
+          <div class="tc-note">모든 터미널 탑승 가능. 가장 저렴. Oyster 또는 Contactless 카드 사용.</div>
+        </div>
+        <div class="tc">
+          <div class="tc-h"><div class="tc-name">🚄 Heathrow Express</div><span style="font-size:10px;color:var(--muted)">£25 · 15분</span></div>
+          <div class="tc-rows">
+            <div class="tc-row"><span class="tc-key">탑승→하차</span><span class="tc-val">T2&3 → Paddington</span></div>
+          </div>
+          <div class="tc-note">고속이지만 Paddington 도착 후 환승 필요. 홀본 호텔은 Elizabeth Line이 더 효율적.</div>
+        </div>
+        <div class="tc">
+          <div class="tc-h"><div class="tc-name">🚕 택시 / Uber</div><span style="font-size:10px;color:var(--muted)">£40~80 · 45~75분</span></div>
+          <div class="tc-rows">
+            <div class="tc-row"><span class="tc-key">짐 많을 때</span><span class="tc-val">✅ 적합</span></div>
+          </div>
+          <div class="tc-note">Uber 앱 사전 설치 권장. 야간 도착 또는 짐이 많을 때 고려.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ▣ 숙소 -->
+    <div id="p-hotel" class="panel">
+      <div class="content-title"><span class="content-title-icon">🏨</span>숙소 추천</div>
+
+      <div style="font-size:12px;color:var(--muted);margin-bottom:16px;padding:10px 14px;background:var(--card);border-radius:var(--r);border:1px solid var(--border);line-height:1.7">
+        📍 <strong>Bloomsbury / Holborn 지역</strong> — 영국박물관 도보권<br>
+        🚇 Elizabeth Line TCR역 5분 · Piccadilly Line Holborn역 5분 · 예매: <strong>Agoda</strong>
+      </div>
+
+      <div class="hotel-grid">
+        <div class="hc best">
+          <div class="hc-top">
+            <div class="hc-rank-row"><span class="hc-rank" style="color:var(--purple)">🥇 1순위</span><div class="hc-rating"><span class="stars">★★★★★</span><span class="rv">4.5</span><span class="rc">(3,752)</span></div></div>
+            <div class="hc-name">The Hoxton, Holborn</div>
+            <div class="hc-area">199-206 High Holborn, WC1V 7BD</div>
+          </div>
+          <div class="hc-feats">
+            <div class="hc-feat"><span>🏛</span>영국박물관 도보 10분</div>
+            <div class="hc-feat"><span>🚇</span>TCR역(Elizabeth Line) 도보 5분</div>
+            <div class="hc-feat"><span>✨</span>세련된 부티크 디자인 · 로비 카페</div>
+          </div>
+          <div class="hc-bottom">
+            <div class="hc-links">
+              <a class="lbtn lb-map" href="https://www.google.com/maps/search/?api=1&query=The+Hoxton+Holborn+London" target="_blank">📍 구글맵</a>
+              <a class="lbtn lb-agoda" href="https://www.agoda.com/search?city=London&searchText=The+Hoxton+Holborn" target="_blank">🏨 Agoda</a>
+            </div>
+            <div class="hc-price p1">$200–280<span style="font-size:10px;color:var(--hint);font-weight:400">/박</span></div>
+          </div>
+        </div>
+
+        <div class="hc">
+          <div class="hc-top">
+            <div class="hc-rank-row"><span class="hc-rank" style="color:var(--teal)">🥈 2순위</span><div class="hc-rating"><span class="stars">★★★★☆</span><span class="rv">4.2</span><span class="rc">(1,489)</span></div></div>
+            <div class="hc-name">Bedford Hotel</div>
+            <div class="hc-area">83-95 Southampton Row, WC1B 4HD</div>
+          </div>
+          <div class="hc-feats">
+            <div class="hc-feat"><span>🏛</span>영국박물관 <strong>도보 5분</strong> — 최근접</div>
+            <div class="hc-feat"><span>💰</span>가성비 최고 · 전통 런던 분위기</div>
+          </div>
+          <div class="hc-bottom">
+            <div class="hc-links">
+              <a class="lbtn lb-map" href="https://www.google.com/maps/search/?api=1&query=Bedford+Hotel+Southampton+Row+London" target="_blank">📍 구글맵</a>
+              <a class="lbtn lb-agoda" href="https://www.agoda.com/search?city=London&searchText=Bedford+Hotel+London" target="_blank">🏨 Agoda</a>
+            </div>
+            <div class="hc-price p2">$150–220<span style="font-size:10px;color:var(--hint);font-weight:400">/박</span></div>
+          </div>
+        </div>
+
+        <div class="hc">
+          <div class="hc-top">
+            <div class="hc-rank-row"><span class="hc-rank" style="color:var(--blue)">🥉 3순위</span><div class="hc-rating"><span class="stars">★★★★☆</span><span class="rv">3.9</span><span class="rc">(2,701)</span></div></div>
+            <div class="hc-name">DoubleTree by Hilton West End</div>
+            <div class="hc-area">92 Southampton Row, WC1B 4BH</div>
+          </div>
+          <div class="hc-feats">
+            <div class="hc-feat"><span>🏛</span>영국박물관 도보 7분</div>
+            <div class="hc-feat"><span>🛡</span>힐튼 브랜드 · 멤버십 포인트 적립</div>
+          </div>
+          <div class="hc-bottom">
+            <div class="hc-links">
+              <a class="lbtn lb-map" href="https://www.google.com/maps/search/?api=1&query=DoubleTree+Hilton+London+West+End" target="_blank">📍 구글맵</a>
+              <a class="lbtn lb-agoda" href="https://www.agoda.com/search?city=London&searchText=DoubleTree+Hilton+London+West+End" target="_blank">🏨 Agoda</a>
+            </div>
+            <div class="hc-price p3">$200–300<span style="font-size:10px;color:var(--hint);font-weight:400">/박</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ▣ 관광지 -->
+    <div id="p-places" class="panel">
+      <div class="content-title"><span class="content-title-icon">📍</span>관광지 & 저장 명소</div>
+
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;font-size:10px">
+        <span style="padding:2px 8px;background:var(--purple-bg);color:var(--purple);border-radius:4px;font-weight:600">★ 핵심</span>
+        <span class="tk tk-free">🟢 무료</span>
+        <span class="tk tk-outer">🔵 외부무료</span>
+        <span class="tk tk-partial">🟡 일부유료</span>
+        <span class="tk tk-paid">🔴 유료·예약권장</span>
+        <span style="padding:2px 8px;background:var(--bg);border:1px solid var(--border);border-radius:4px;font-weight:600;color:var(--muted)">Bloomsbury 숙소 기준 이동</span>
+      </div>
+
+      <div class="places-grid">
+        <!-- 랜드마크 -->
+        <div class="pc">
+          <div class="pc-h landmark">🗺 랜드마크 & 문화유산</div>
+
+          <div class="pr">
+            <span class="pr-icon">🏛</span>
+            <div class="pr-info">
+              <div class="pr-name main">영국 박물관 ★</div>
+              <div class="pr-cat">박물관 · ★4.7 (173K)</div>
+              <span class="tk tk-free">🟢 무료 · 사전예약 권장</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa main-tag">도보 10분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=British+Museum+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.britishmuseum.org" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🖼</span>
+            <div class="pr-info">
+              <div class="pr-name">내셔널 갤러리</div>
+              <div class="pr-cat">미술관 · ★4.8 (61K)</div>
+              <span class="tk tk-free">🟢 무료 (상설전)</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 20분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=National+Gallery+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.nationalgallery.org.uk" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">👑</span>
+            <div class="pr-info">
+              <div class="pr-name">버킹엄 궁전</div>
+              <div class="pr-cat">문화 랜드마크 · ★4.5 (191K)</div>
+              <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 10분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Buckingham+Palace+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.rct.uk/visit/the-state-rooms-buckingham-palace" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">⏰</span>
+            <div class="pr-info">
+              <div class="pr-name">빅 벤</div>
+              <div class="pr-cat">문화 랜드마크 · ★4.6 (98K)</div>
+              <span class="tk tk-outer">🔵 외부 무료 관람</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 10분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Big+Ben+Westminster+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.parliament.uk/bigben" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">⛪</span>
+            <div class="pr-info">
+              <div class="pr-name">웨스터민스터 사원</div>
+              <div class="pr-cat">★4.6 (51K)</div>
+              <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 10분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Westminster+Abbey+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.westminster-abbey.org" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">⛩</span>
+            <div class="pr-info">
+              <div class="pr-name">세인트 폴 대성당</div>
+              <div class="pr-cat">★4.7 (55K)</div>
+              <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 20분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=St+Paul%27s+Cathedral+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.stpauls.co.uk" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🌉</span>
+            <div class="pr-info">
+              <div class="pr-name">타워 브리지</div>
+              <div class="pr-cat">★4.8 (181K)</div>
+              <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 25분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.towerbridge.org.uk" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🏰</span>
+            <div class="pr-info">
+              <div class="pr-name">런던 탑</div>
+              <div class="pr-cat">★4.7 (119K)</div>
+              <span class="tk tk-paid" style="background:#fecaca;color:#7f1d1d">🔴 유료 · 사전예약 필수</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 25분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tower+of+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.hrp.org.uk/tower-of-london/" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🎡</span>
+            <div class="pr-info">
+              <div class="pr-name">런던 아이</div>
+              <div class="pr-cat">★4.5 (200K)</div>
+              <span class="tk tk-paid" style="background:#fecaca;color:#7f1d1d">🔴 유료 · 사전예약 필수</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 15분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=London+Eye+South+Bank" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.londoneye.com" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 미술 & 문화 -->
+        <div class="pc">
+          <div class="pc-h art">🎨 미술 & 현대문화</div>
+
+          <div class="pr">
+            <span class="pr-icon">🌊</span>
+            <div class="pr-info">
+              <div class="pr-name">테이트 모던</div>
+              <div class="pr-cat">미술관 · ★4.5 (82K)</div>
+              <span class="tk tk-free">🟢 무료 (상설전)</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 15분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tate+Modern+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.tate.org.uk/visit/tate-modern" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🦕</span>
+            <div class="pr-info">
+              <div class="pr-name">자연사 박물관</div>
+              <div class="pr-cat">박물관 · ★4.6 (35K)</div>
+              <span class="tk tk-free">🟢 무료</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 20분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Natural+History+Museum+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.nhm.ac.uk" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🎭</span>
+            <div class="pr-info">
+              <div class="pr-name">바비칸 센터</div>
+              <div class="pr-cat">공연예술 · ★4.6 (4.6K)</div>
+              <span class="tk tk-partial">🟡 공연·전시 유료</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 20분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Barbican+Centre+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://www.barbican.org.uk" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🔭</span>
+            <div class="pr-info">
+              <div class="pr-name">The Design Museum</div>
+              <div class="pr-cat">★4.4 (13K)</div>
+              <span class="tk tk-partial">🟡 일부 무료 · 특별전 유료</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 25분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Design+Museum+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://designmuseum.org" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🖼</span>
+            <div class="pr-info">
+              <div class="pr-name">Moco Museum London</div>
+              <div class="pr-cat">현대미술관 · ★4.6 (2.9K)</div>
+              <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 15분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Moco+Museum+London" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://mocomuseum.com/london" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">💡</span>
+            <div class="pr-info">
+              <div class="pr-name">Lightroom</div>
+              <div class="pr-cat">아트 센터 · ★4.6 (1.9K)</div>
+              <span class="tk tk-paid" style="background:#fecaca;color:#7f1d1d">🔴 유료 · 사전예약 필수</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 15분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Lightroom+London+Kings+Cross" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://lightroom.london" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🔥</span>
+            <div class="pr-info">
+              <div class="pr-name">Frameless Immersive Art</div>
+              <div class="pr-cat">체험 · ★4.6 (5K)</div>
+              <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 18분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Frameless+London+Marble+Arch" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://frameless.com" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🌐</span>
+            <div class="pr-info">
+              <div class="pr-name">Outernet London</div>
+              <div class="pr-cat">미디어 · ★4.6 (2.8K)</div>
+              <span class="tk tk-free">🟢 무료 (야외 공간)</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 18분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Outernet+London+Tottenham+Court+Road" target="_blank">🗺 지도</a>
+                <a class="webbtn" href="https://outernet.com" target="_blank">🌐 홈</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</main>
+</div><!-- /page -->
+<script>
+var panels=['eta','flight','hotel','places'];
+
+/* ── 핵심 수정: topbar 실제 높이 동적 측정 ── */
+function fixTopPadding(){
+  var tb=document.querySelector('.topbar');
+  var content=document.querySelector('.content');
+  if(!tb||!content)return;
+  var isMobile=(window.innerWidth<1024);
+  if(isMobile){
+    var h=tb.getBoundingClientRect().height;
+    content.style.paddingTop=(h+12)+'px';
+  } else {
+    content.style.paddingTop='24px';
+  }
+}
+
+function switchPanel(id){
+  panels.forEach(function(p){document.getElementById('p-'+p).classList.toggle('on',p===id)});
+  document.querySelectorAll('.tb-btn').forEach(function(b,i){b.classList.toggle('on',panels[i]===id)});
+  document.querySelectorAll('.sb-btn').forEach(function(b,i){b.classList.toggle('on',panels[i]===id)});
+  updateCgGrid();
+  fixTopPadding();
+  window.scrollTo({top:0,behavior:'auto'});
+}
+
+function switchDay(id){
+  ['d27','d28'].forEach(function(d){document.getElementById(d).classList.toggle('on',d===id)});
+  document.querySelectorAll('.dtab').forEach(function(t,i){t.classList.toggle('on',(i===0&&id==='d27')||(i===1&&id==='d28'))});
+}
+
+function updateCgGrid(){
+  var g=document.getElementById('cg-grid');
+  if(!g)return;
+  g.style.gridTemplateColumns=(window.innerWidth>=1024)?'1fr 1fr':'1fr';
+}
+
+function onResize(){
+  fixTopPadding();
+  updateCgGrid();
+}
+
+window.addEventListener('resize',onResize);
+/* 폰트 로딩 완료 후 재측정 */
+document.addEventListener('DOMContentLoaded',function(){
+  fixTopPadding();
+  updateCgGrid();
+  /* 웹폰트 로딩 후 재측정 */
+  setTimeout(fixTopPadding, 300);
+  setTimeout(fixTopPadding, 800);
+});
+window.addEventListener('load',function(){
+  fixTopPadding();
+  updateCgGrid();
+});
+/* 즉시 실행 */
+fixTopPadding();
+updateCgGrid();
+</script>
+</body>
+</html>
