@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>삼성기증전 관련 영국 런던 출장</title>
+<title>삼성기증전 관련 영국 런던 출장 — 2026년 8월</title>
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 :root{
@@ -337,6 +337,46 @@ a{color:inherit;text-decoration:none}
   .app-grid{grid-template-columns:repeat(4,1fr)}
   .pay-table td,.pay-table th{padding:9px 14px}
 }
+
+/* Full-width place cards */
+@media(min-width:768px){
+  .pc[style*="grid-column"]{grid-column:1 / -1}
+}
+
+/* WEATHER PANEL */
+.sun-table{width:100%;border-collapse:collapse;font-size:12px}
+.sun-table th{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:8px 12px;font-size:10px;font-weight:600;letter-spacing:0.3px;text-align:center}
+.sun-table th:first-child{text-align:left;border-radius:6px 0 0 0}
+.sun-table th:last-child{border-radius:0 6px 0 0}
+.sun-table td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:center;font-size:12px}
+.sun-table td:first-child{text-align:left;font-weight:600}
+.sun-table tr:hover td{background:#fafaf7}
+.sun-table .today-row td{background:var(--purple-bg);font-weight:600}
+.wbar-wrap{display:flex;flex-direction:column;gap:6px;padding:0}
+.wbar-row{display:flex;align-items:center;gap:8px;font-size:11px}
+.wbar-label{width:26px;text-align:center;font-size:12px}
+.wbar-month{width:22px;color:var(--muted);font-size:10px;font-weight:600;flex-shrink:0}
+.wbar-track{flex:1;background:var(--border);border-radius:3px;height:8px;position:relative;overflow:visible}
+.wbar-seoul{height:8px;border-radius:3px;position:absolute;opacity:.55}
+.wbar-london{height:8px;border-radius:3px;position:absolute}
+.wbar-aug{outline:2px solid var(--purple);outline-offset:1px;border-radius:3px}
+.wbar-temps{width:60px;text-align:right;font-size:10px;color:var(--muted);flex-shrink:0}
+.wstat{background:var(--card);border-radius:var(--r);border:1px solid var(--border);padding:14px;text-align:center}
+.wstat-val{font-size:20px;font-weight:700;letter-spacing:-0.5px;line-height:1}
+.wstat-label{font-size:10px;color:var(--muted);margin-top:4px;font-weight:500;letter-spacing:0.2px}
+.wgrid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.clothing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.citem{background:var(--card);border-radius:var(--r);border:1px solid var(--border);padding:12px;display:flex;gap:8px;align-items:flex-start}
+.cicon{font-size:20px;flex-shrink:0}
+.ctitle{font-size:12px;font-weight:700;margin-bottom:2px}
+.cdesc{font-size:11px;color:var(--muted);line-height:1.5}
+@media(min-width:600px){
+  .wgrid-4{grid-template-columns:repeat(4,1fr)}
+  .clothing-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1024px){
+  .clothing-grid{grid-template-columns:repeat(4,1fr)}
+}
 </style>
 </head>
 <body>
@@ -358,13 +398,13 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="sb-title">삼성기증전 관련 영국 런던 출장</div>
     <div class="sb-meta">
-      <span class="sb-chip">📅 출장기간 협의중</span>
-      <span class="sb-chip">✈️ 27일 or 28일 출발</span>
+      <span class="sb-chip">📅 2026년 8월 9일~13일</span>
+      <span class="sb-chip">🇬🇧 일정 확정</span>
     </div>
   </div>
   <div class="sb-travelers">
-    <div class="sb-tv"><div class="sb-dot" style="background:#60a5fa"></div><span><strong style="color:#93c5fd">김지훈</strong> — 26·27일 출발</span></div>
-    <div class="sb-tv"><div class="sb-dot" style="background:#34d399"></div><span><strong style="color:#6ee7b7">김영민</strong> — 28일~ 출발</span></div>
+    <div class="sb-tv"><div class="sb-dot" style="background:#60a5fa"></div><span><strong style="color:#93c5fd">김지훈</strong> — 8/9 OZ521</span></div>
+    <div class="sb-tv"><div class="sb-dot" style="background:#34d399"></div><span><strong style="color:#6ee7b7">김영민·이예주</strong> — 8/10 KE907</span></div>
   </div>
   <nav class="sb-nav">
     <button class="sb-btn on" onclick="switchPanel('eta')"><span class="sb-btn-icon">🇬🇧</span>ETA 신청</button>
@@ -372,6 +412,7 @@ a{color:inherit;text-decoration:none}
     <button class="sb-btn" onclick="switchPanel('hotel')"><span class="sb-btn-icon">🏨</span>숙소</button>
     <button class="sb-btn" onclick="switchPanel('transport')"><span class="sb-btn-icon">🚇</span>현지 교통</button>
     <button class="sb-btn" onclick="switchPanel('places')"><span class="sb-btn-icon">📍</span>관광지</button>
+    <button class="sb-btn" onclick="switchPanel('weather')"><span class="sb-btn-icon">☀️</span>날씨 & 일출</button>
   </nav>
   <div class="sb-footer">d'strict · London Business Trip 2026</div>
 </aside>
@@ -396,14 +437,14 @@ a{color:inherit;text-decoration:none}
       <div class="tb-text">
         <div class="tb-title">삼성기증전 관련 영국 런던 출장</div>
         <div class="tb-sub">
-          <span class="tb-chip">📅 협의중</span>
-          <span class="tb-chip">✈️ 27일 or 28일</span>
+          <span class="tb-chip">📅 2026.08.09~13</span>
+          <span class="tb-chip">🇬🇧 확정</span>
         </div>
       </div>
     </div>
     <div class="tb-travelers">
-      <div class="tb-tv"><div class="tb-dot" style="background:#60a5fa"></div><strong style="color:#93c5fd">김지훈</strong><span style="opacity:.7"> 26·27일</span></div>
-      <div class="tb-tv"><div class="tb-dot" style="background:#34d399"></div><strong style="color:#6ee7b7">김영민</strong><span style="opacity:.7"> 28일~</span></div>
+      <div class="tb-tv"><div class="tb-dot" style="background:#60a5fa"></div><strong style="color:#93c5fd">김지훈</strong><span style="opacity:.7"> 8/9출발</span></div>
+      <div class="tb-tv"><div class="tb-dot" style="background:#34d399"></div><strong style="color:#6ee7b7">김영민·이예주</strong><span style="opacity:.7"> 8/10출발</span></div>
     </div>
     <nav class="tb-nav">
       <button class="tb-btn on" onclick="switchPanel('eta')"><span class="tb-btn-icon">🇬🇧</span><span class="tb-btn-label">ETA</span></button>
@@ -411,6 +452,7 @@ a{color:inherit;text-decoration:none}
       <button class="tb-btn" onclick="switchPanel('hotel')"><span class="tb-btn-icon">🏨</span><span class="tb-btn-label">숙소</span></button>
       <button class="tb-btn" onclick="switchPanel('transport')"><span class="tb-btn-icon">🚇</span><span class="tb-btn-label">교통</span></button>
       <button class="tb-btn" onclick="switchPanel('places')"><span class="tb-btn-icon">📍</span><span class="tb-btn-label">관광지</span></button>
+      <button class="tb-btn" onclick="switchPanel('weather')"><span class="tb-btn-icon">☀️</span><span class="tb-btn-label">날씨</span></button>
     </nav>
   </div>
 
@@ -471,141 +513,153 @@ a{color:inherit;text-decoration:none}
     <div id="p-flight" class="panel">
       <div class="content-title"><span class="content-title-icon">✈️</span>항공편 스케줄</div>
 
-      <div class="pcmp">
-        <span style="font-size:15px;flex-shrink:0">💡</span>
-        <div>동일 항공편 기준 <strong>27일 출발이 약 87~205만원 저렴</strong>. 28일 탭에서 27일 대비 차액 확인 가능.</div>
-      </div>
-
+      <!-- 출장자 탭 -->
       <div class="dtabs">
-        <button class="dtab on" onclick="switchDay('d27')">📅 05.27(수) 출발<span class="pdiff">다음날 05.28 미팅 · 김지훈</span></button>
-        <button class="dtab" onclick="switchDay('d28')">📅 05.28(목) 출발<span class="pdiff">다음날 05.29 미팅 · 김영민</span></button>
+        <button class="dtab on" onclick="switchDay('djh')">
+          🔵 김지훈<span class="pdiff">8/9(일) 출발 · OZ521 · 아시아나항공</span>
+        </button>
+        <button class="dtab" onclick="switchDay('dym')">
+          🟢 김영민 · 이예주<span class="pdiff">8/10(월) 출발 · KE907 · 대한항공</span>
+        </button>
       </div>
 
-      <!-- 05.27 출발 -->
-      <div id="d27" class="dpanel on">
-        <div class="flight-cols">
-          <!-- 아시아나 ★한산 -->
-          <div class="fc best-time">
-            <div class="fc-top"><div class="fc-airline">🌸 아시아나항공</div><div class="fc-tags"><span class="tag tt">🟢 히드로 한산 도착</span></div></div>
-            <div class="fc-routes">
-              <div class="route"><span class="r-label">출국</span><span class="r-time">07:50</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h30m</span><div class="r-line"></div></div><span class="r-time">14:20</span><span class="r-ap">LHR</span></div>
-              <div class="route"><span class="r-label">귀국</span><span class="r-time">16:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h45m</span><div class="r-line"></div></div><span class="r-time">13:20<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
-            </div>
-            <div class="fc-bottom">
-              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">1,585,400원~</div></div></div>
-              <div class="fc-arrival ok">✅ 14:20 도착 — 입국장 여유</div>
+      <!-- 김지훈 -->
+      <div id="djh" class="dpanel on">
+        <div style="background:var(--blue-bg);color:var(--blue);font-size:11px;font-weight:600;padding:7px 12px;border-radius:8px;margin-bottom:12px;display:flex;gap:6px;align-items:center">
+          <span>👤 김지훈</span>
+          <span style="opacity:.6">|</span>
+          <span>인천공항 <strong>제2터미널</strong> · 히드로 <strong>T2</strong></span>
+        </div>
+
+        <!-- 출국 OZ521 -->
+        <div class="fc best-time" style="border-color:var(--blue)">
+          <div class="fc-top">
+            <div class="fc-airline">🌸 아시아나항공 <span style="font-size:11px;font-weight:500;color:var(--muted)">OZ521</span></div>
+            <div class="fc-tags"><span class="tag tt">🟢 히드로 한산 도착</span></div>
+          </div>
+          <div class="fc-routes">
+            <div class="route">
+              <span class="r-label">출국</span>
+              <span class="r-time">07:50</span><span class="r-ap">ICN</span>
+              <div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h30m</span><div class="r-line"></div></div>
+              <span class="r-time">14:20</span><span class="r-ap">LHR</span>
             </div>
           </div>
-          <!-- 대한항공 10:55 ★최단 -->
-          <div class="fc best-dur">
-            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
-            <div class="fc-routes">
-              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
-              <div class="route"><span class="r-label">귀국</span><span class="r-time">19:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">16:15<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+          <div class="fc-bottom">
+            <div style="font-size:11px;color:var(--muted);line-height:1.6">
+              📅 <strong>8월 9일 (일)</strong><br>
+              🏢 인천 <strong>제2터미널</strong> G~J 카운터 출발<br>
+              🛬 히드로 <strong>T2</strong> 도착 → Elizabeth Line 바로 탑승
             </div>
-            <div class="fc-bottom">
-              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">2,195,200원~</div></div></div>
-              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
+            <div class="fc-arrival ok">✅ 14:20 도착<br>입국장 가장 여유</div>
+          </div>
+        </div>
+
+        <!-- 귀국 OZ522 -->
+        <div class="fc" style="border-color:var(--blue)">
+          <div class="fc-top">
+            <div class="fc-airline">🌸 아시아나항공 <span style="font-size:11px;font-weight:500;color:var(--muted)">OZ522</span></div>
+          </div>
+          <div class="fc-routes">
+            <div class="route">
+              <span class="r-label">귀국</span>
+              <span class="r-time">16:45</span><span class="r-ap">LHR</span>
+              <div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h35m</span><div class="r-line"></div></div>
+              <span class="r-time">13:20<span class="r-plus">+1</span></span><span class="r-ap">ICN</span>
             </div>
           </div>
-          <!-- 대한항공 10:55 귀국13:25 -->
-          <div class="fc best-dur">
-            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
-            <div class="fc-routes">
-              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
-              <div class="route"><span class="r-label">귀국</span><span class="r-time">13:25</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">10:05<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+          <div class="fc-bottom">
+            <div style="font-size:11px;color:var(--muted);line-height:1.6">
+              📅 <strong>8월 13일 (목) 출발 → 14일 (금) 도착</strong><br>
+              🛫 히드로 <strong>T2</strong> 출발<br>
+              🏢 인천 <strong>제2터미널</strong> 도착
             </div>
-            <div class="fc-bottom">
-              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">2,463,600원~</div></div></div>
-              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
-            </div>
+            <div class="fc-arrival neutral">🟡 16:45 출발</div>
           </div>
-          <!-- 대한항공 12:25 -->
-          <div class="fc">
-            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div></div>
-            <div class="fc-routes">
-              <div class="route"><span class="r-label">출국</span><span class="r-time">12:25</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">18:50</span><span class="r-ap">LHR</span></div>
-              <div class="route"><span class="r-label">귀국</span><span class="r-time">19:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">16:15<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
-            </div>
-            <div class="fc-bottom">
-              <div class="fc-prices"><div class="fc-price-item"><div class="fc-price-day">27일 출발</div><div class="fc-price p27">2,596,400원~</div></div></div>
-              <div class="fc-arrival neutral">🟡 18:50 도착 — 혼잡 완화</div>
-            </div>
-          </div>
+        </div>
+
+        <!-- 숙소 체크아웃 -->
+        <div style="background:var(--purple-bg);border-radius:8px;padding:9px 12px;font-size:11px;color:var(--purple);margin-top:4px">
+          🏨 숙소 체크아웃 8/13 11:00 → 공항 이동 (히드로 T2, OZ522 16:45)
         </div>
       </div>
 
-      <!-- 05.28 출발 -->
-      <div id="d28" class="dpanel">
-        <div class="flight-cols">
-          <!-- 아시아나 ★한산 -->
-          <div class="fc best-time">
-            <div class="fc-top"><div class="fc-airline">🌸 아시아나항공</div><div class="fc-tags"><span class="tag tt">🟢 히드로 한산 도착</span></div></div>
-            <div class="fc-routes">
-              <div class="route"><span class="r-label">출국</span><span class="r-time">07:50</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h30m</span><div class="r-line"></div></div><span class="r-time">14:20</span><span class="r-ap">LHR</span></div>
-              <div class="route"><span class="r-label">귀국</span><span class="r-time">16:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h45m</span><div class="r-line"></div></div><span class="r-time">13:20<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
-            </div>
-            <div class="fc-bottom">
-              <div class="fc-prices">
-                <div class="fc-price-item"><div class="fc-price-day">28일 출발</div><div class="fc-price p28">3,630,600원~</div></div>
-                <div class="fc-price-div"></div>
-                <div class="fc-price-item"><div class="fc-price-day">27일 比</div><div class="fc-price" style="color:var(--red);font-size:11px">+2,045,200원</div></div>
-              </div>
-              <div class="fc-arrival ok">✅ 14:20 도착 — 입국장 여유</div>
+      <!-- 김영민·이예주 -->
+      <div id="dym" class="dpanel">
+        <div style="background:var(--green-bg);color:var(--green);font-size:11px;font-weight:600;padding:7px 12px;border-radius:8px;margin-bottom:12px;display:flex;gap:6px;align-items:center">
+          <span>👤 김영민 · 이예주</span>
+          <span style="opacity:.6">|</span>
+          <span>인천공항 <strong>제2터미널</strong> · 히드로 <strong>T4</strong></span>
+        </div>
+
+        <!-- 출국 KE907 -->
+        <div class="fc best-dur" style="border-color:var(--green)">
+          <div class="fc-top">
+            <div class="fc-airline">🔵 대한항공 <span style="font-size:11px;font-weight:500;color:var(--muted)">KE907</span></div>
+            <div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div>
+          </div>
+          <div class="fc-routes">
+            <div class="route">
+              <span class="r-label">출국</span>
+              <span class="r-time">10:55</span><span class="r-ap">ICN</span>
+              <div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div>
+              <span class="r-time">17:20</span><span class="r-ap">LHR</span>
             </div>
           </div>
-          <!-- 대한항공 10:55 ★최단 귀국19:35 -->
-          <div class="fc best-dur">
-            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
-            <div class="fc-routes">
-              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
-              <div class="route"><span class="r-label">귀국</span><span class="r-time">19:35</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">16:15<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+          <div class="fc-bottom">
+            <div style="font-size:11px;color:var(--muted);line-height:1.6">
+              📅 <strong>8월 10일 (월)</strong><br>
+              🏢 인천 <strong>제2터미널</strong> H 카운터 출발<br>
+              🛬 히드로 <strong>T4</strong> 도착 → Elizabeth Line T4역 탑승
             </div>
-            <div class="fc-bottom">
-              <div class="fc-prices">
-                <div class="fc-price-item"><div class="fc-price-day">28일 출발</div><div class="fc-price p28">3,064,500원~</div></div>
-                <div class="fc-price-div"></div>
-                <div class="fc-price-item"><div class="fc-price-day">27일 比</div><div class="fc-price" style="color:var(--red);font-size:11px">+869,300원</div></div>
-              </div>
-              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
+            <div class="fc-arrival warn">⚠️ 17:20 도착<br>오후 혼잡 시간대</div>
+          </div>
+        </div>
+
+        <!-- 귀국 KE908 -->
+        <div class="fc" style="border-color:var(--green)">
+          <div class="fc-top">
+            <div class="fc-airline">🔵 대한항공 <span style="font-size:11px;font-weight:500;color:var(--muted)">KE908</span></div>
+          </div>
+          <div class="fc-routes">
+            <div class="route">
+              <span class="r-label">귀국</span>
+              <span class="r-time">19:35</span><span class="r-ap">LHR</span>
+              <div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div>
+              <span class="r-time">16:15<span class="r-plus">+1</span></span><span class="r-ap">ICN</span>
             </div>
           </div>
-          <!-- 대한항공 10:55 귀국13:25 -->
-          <div class="fc best-dur">
-            <div class="fc-top"><div class="fc-airline">🔵 대한항공</div><div class="fc-tags"><span class="tag tp">⚡ 최단 비행시간</span></div></div>
-            <div class="fc-routes">
-              <div class="route"><span class="r-label">출국</span><span class="r-time">10:55</span><span class="r-ap">ICN</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 14h25m</span><div class="r-line"></div></div><span class="r-time">17:20</span><span class="r-ap">LHR</span></div>
-              <div class="route"><span class="r-label">귀국</span><span class="r-time">13:25</span><span class="r-ap">LHR</span><div class="r-arrow"><div class="r-line"></div><span class="r-dur">직항 12h40m</span><div class="r-line"></div></div><span class="r-time">10:05<span class="r-plus">+1</span></span><span class="r-ap">ICN</span></div>
+          <div class="fc-bottom">
+            <div style="font-size:11px;color:var(--muted);line-height:1.6">
+              📅 <strong>8월 13일 (목) 출발 → 14일 (금) 도착</strong><br>
+              🛫 히드로 <strong>T4</strong> 출발<br>
+              🏢 인천 <strong>제2터미널</strong> H 카운터 도착
             </div>
-            <div class="fc-bottom">
-              <div class="fc-prices">
-                <div class="fc-price-item"><div class="fc-price-day">28일 출발</div><div class="fc-price p28">3,185,200원~</div></div>
-                <div class="fc-price-div"></div>
-                <div class="fc-price-item"><div class="fc-price-day">27일 比</div><div class="fc-price" style="color:var(--red);font-size:11px">+721,600원</div></div>
-              </div>
-              <div class="fc-arrival warn">⚠️ 17:20 도착 — 오후 혼잡</div>
-            </div>
+            <div class="fc-arrival neutral">🟡 19:35 출발</div>
           </div>
+        </div>
+
+        <!-- 숙소 체크아웃 -->
+        <div style="background:var(--purple-bg);border-radius:8px;padding:9px 12px;font-size:11px;color:var(--purple);margin-top:4px">
+          🏨 숙소 체크아웃 8/13 11:00 → 공항 이동 (히드로 T4, KE908 19:35)
         </div>
       </div>
 
       <!-- 공항 혼잡도 -->
       <div class="sl">⏱ 공항 혼잡도</div>
-      <div style="display:grid;grid-template-columns:1fr;gap:10px" id="cg-grid">
-
+      <div id="cg-grid">
         <div class="cg-wrap">
           <div class="cg-title">
-            🇰🇷
-            인천공항 (ICN) 출발 혼잡도
+            🇰🇷 인천공항 (ICN) 출발 혼잡도 — 아시아나·대한항공 모두 <strong>제2터미널</strong>
           </div>
           <div class="cg-slots">
-            <div class="cs"><div class="cs-time">04–06시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">아시아나<br>체크인 시간</div></div>
-            <div class="cs"><div class="cs-time">06–09시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note">아침 출발<br>집중</div></div>
-            <div class="cs"><div class="cs-time">09–11시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note">대한항공<br>10:55 체크인</div></div>
-            <div class="cs"><div class="cs-time">11–13시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">대한항공<br>12:25 체크인</div></div>
+            <div class="cs"><div class="cs-time">04–06시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">아시아나<br>체크인(OZ521)</div></div>
+            <div class="cs"><div class="cs-time">06–09시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note">아침편<br>집중</div></div>
+            <div class="cs"><div class="cs-time">09–11시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note">대한항공<br>체크인(KE907)</div></div>
+            <div class="cs"><div class="cs-time">11–13시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">오전<br>감소</div></div>
             <div class="cs"><div class="cs-time">13–16시</div><div class="cs-bar" style="background:#10b981"></div><div class="cs-status" style="color:#10b981">🟢여유</div><div class="cs-note">오후<br>한산</div></div>
           </div>
-          <div class="cg-note">💡 아시아나 07:50편: 새벽 5~6시 체크인 — 인천공항 <strong>제1터미널</strong>(아시아나) / 대한항공은 <strong>제2터미널</strong></div>
+          <div class="cg-note">💡 2026.01.14부로 아시아나항공 제2터미널 이전 완료 — 두 항공사 모두 <strong>제2터미널</strong> 이용. 8월 성수기로 예상보다 혼잡할 수 있어 2시간 전 도착 권장.</div>
         </div>
 
         <div class="cg-wrap">
@@ -614,121 +668,206 @@ a{color:inherit;text-decoration:none}
             히드로공항 (LHR) 입국장 혼잡도
           </div>
           <div class="cg-slots">
-            <div class="cs"><div class="cs-time">06–10시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴매우혼잡</div><div class="cs-note">아침 출발편<br>집중 도착</div></div>
-            <div class="cs"><div class="cs-time">10–14시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">유럽발<br>오전편</div></div>
-            <div class="cs" style="background:#f0faf6"><div class="cs-time">14–16시</div><div class="cs-bar" style="background:#10b981"></div><div class="cs-status" style="color:#10b981">🟢여유★</div><div class="cs-note" style="color:var(--teal);font-weight:600">아시아나<br>14:20 도착</div></div>
-            <div class="cs"><div class="cs-time">16–19시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴매우혼잡</div><div class="cs-note" style="color:var(--red)">대한항공<br>17:20 도착</div></div>
-            <div class="cs"><div class="cs-time">19–22시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">저녁<br>완화 시작</div></div>
+            <div class="cs"><div class="cs-time">06–10시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note">아침편<br>집중</div></div>
+            <div class="cs"><div class="cs-time">10–14시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">중간<br>시간대</div></div>
+            <div class="cs" style="background:#f0faf6"><div class="cs-time">14–16시</div><div class="cs-bar" style="background:#10b981"></div><div class="cs-status" style="color:#10b981">🟢여유★</div><div class="cs-note" style="color:var(--teal);font-weight:600">OZ521<br>14:20(T2)</div></div>
+            <div class="cs"><div class="cs-time">16–19시</div><div class="cs-bar" style="background:#ef4444"></div><div class="cs-status" style="color:#ef4444">🔴혼잡</div><div class="cs-note" style="color:var(--red)">KE907<br>17:20(T4)</div></div>
+            <div class="cs"><div class="cs-time">19–22시</div><div class="cs-bar" style="background:#f59e0b"></div><div class="cs-status" style="color:#f59e0b">🟡보통</div><div class="cs-note">저녁<br>완화</div></div>
           </div>
-          <div class="cg-note">💡 LHR 귀국 출발 혼잡도 — 아침(06-09시) 가장 혼잡. 아시아나 16:35 / 대한항공 13:25·19:35 출발은 비교적 여유.</div>
-        </div>
-
-      </div>
-
-      <!-- 공항→숙소 이동 -->
-      <div class="sl">🚇 히드로 → 숙소 이동</div>
-      <div class="transport-grid">
-        <div class="tc best">
-          <div class="tc-h"><div class="tc-name">🟣 Elizabeth Line <span class="tag tp" style="margin-left:4px;font-size:10px">추천</span></div></div>
-          <div class="tc-rows">
-            <div class="tc-row"><span class="tc-key">소요시간</span><span class="tc-val">35~40분</span></div>
-            <div class="tc-row"><span class="tc-key">요금 (Oyster)</span><span class="tc-val">£9.60~12.80</span></div>
-            <div class="tc-row"><span class="tc-key">탑승→하차</span><span class="tc-val">Heathrow T2&3 → TCR역</span></div>
-          </div>
-          <div class="tc-note">아시아나 히드로 T2 도착 시 동일 역사에서 바로 탑승. TCR역 하차 후 Hoxton 도보 5분.</div>
-        </div>
-        <div class="tc">
-          <div class="tc-h"><div class="tc-name">🔵 Piccadilly Line</div><span style="font-size:10px;color:var(--muted)">£6.70 · 55분</span></div>
-          <div class="tc-rows">
-            <div class="tc-row"><span class="tc-key">탑승→하차</span><span class="tc-val">전 터미널 → Holborn역</span></div>
-          </div>
-          <div class="tc-note">모든 터미널 탑승 가능. 가장 저렴. Oyster 또는 Contactless 카드 사용.</div>
-        </div>
-        <div class="tc">
-          <div class="tc-h"><div class="tc-name">🚄 Heathrow Express</div><span style="font-size:10px;color:var(--muted)">£25 · 15분</span></div>
-          <div class="tc-rows">
-            <div class="tc-row"><span class="tc-key">탑승→하차</span><span class="tc-val">T2&3 → Paddington</span></div>
-          </div>
-          <div class="tc-note">고속이지만 Paddington 도착 후 환승 필요. 홀본 호텔은 Elizabeth Line이 더 효율적.</div>
-        </div>
-        <div class="tc">
-          <div class="tc-h"><div class="tc-name">🚕 택시 / Uber</div><span style="font-size:10px;color:var(--muted)">£40~80 · 45~75분</span></div>
-          <div class="tc-rows">
-            <div class="tc-row"><span class="tc-key">짐 많을 때</span><span class="tc-val">✅ 적합</span></div>
-          </div>
-          <div class="tc-note">Uber 앱 사전 설치 권장. 야간 도착 또는 짐이 많을 때 고려.</div>
+          <div class="cg-note">💡 귀국 출발 — 아시아나 OZ522 16:45(T2) / 대한항공 KE908 19:35(T4) 모두 비교적 여유있는 시간대.</div>
         </div>
       </div>
+
+      <!-- 공항→숙소 이동비용 -->
+      <div class="sl">🚇 히드로 → 래디슨 블루 호텔 이동 & 비용</div>
+      <div style="background:var(--purple-bg);border-radius:8px;padding:9px 12px;font-size:11px;color:var(--purple);margin-bottom:10px;font-weight:500">
+        📍 숙소: 97 Great Russell St, WC1B 3LB — Tottenham Court Road역 도보 3분 / Russell Square역 도보 5분
+      </div>
+
+      <!-- 아시아나 T2 경로 -->
+      <div class="tr-section" style="border-color:var(--blue)">
+        <div class="tr-section-h">
+          <span style="font-size:16px">🌸</span>
+          <div class="tr-section-title">김지훈 — 히드로 T2 도착 시 (OZ521)</div>
+        </div>
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:11px">
+            <thead>
+              <tr style="background:var(--bg)">
+                <th style="padding:7px 10px;text-align:left;font-weight:700;color:var(--muted);letter-spacing:0.2px;border-bottom:1px solid var(--border)">이동 수단</th>
+                <th style="padding:7px 10px;text-align:center;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border)">소요시간</th>
+                <th style="padding:7px 10px;text-align:center;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border)">요금</th>
+                <th style="padding:7px 10px;text-align:left;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border)">경로</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f0faf6">
+                <td style="padding:8px 10px;font-weight:700;color:var(--teal);border-bottom:1px solid var(--border)">🟣 Elizabeth Line ★</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border)"><strong>35분</strong></td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);color:var(--teal);font-weight:700">£9.60<br><span style="font-size:9px;color:var(--hint)">(off-peak)</span></td>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">T2&3역 → TCR역 → 도보 3분</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">🔵 Piccadilly Line</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border)">50분</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);font-weight:600">£6.70</td>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">T2&3역 → Russell Sq → 도보 5분</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">🚕 Uber/Bolt</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border)">50~65분</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);font-weight:600">£55~85</td>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">앱 사전 예약 · 8월 성수기 surge↑</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px">🖤 블랙캡</td>
+                <td style="padding:8px 10px;text-align:center">50~70분</td>
+                <td style="padding:8px 10px;text-align:center;font-weight:600">£75~110</td>
+                <td style="padding:8px 10px">T2 택시 승강장 · 미터제</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tr-note">💡 T2 도착 후 같은 역사에서 Elizabeth Line 바로 탑승 — 가장 빠르고 편리. 14:20 도착이라 off-peak 요금(£9.60) 적용 가능.</div>
+      </div>
+
+      <!-- 대한항공 T4 경로 -->
+      <div class="tr-section" style="border-color:var(--green)">
+        <div class="tr-section-h">
+          <span style="font-size:16px">🔵</span>
+          <div class="tr-section-title">김영민·이예주 — 히드로 T4 도착 시 (KE907)</div>
+        </div>
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:11px">
+            <thead>
+              <tr style="background:var(--bg)">
+                <th style="padding:7px 10px;text-align:left;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border)">이동 수단</th>
+                <th style="padding:7px 10px;text-align:center;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border)">소요시간</th>
+                <th style="padding:7px 10px;text-align:center;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border)">요금</th>
+                <th style="padding:7px 10px;text-align:left;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border)">경로</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f0faf6">
+                <td style="padding:8px 10px;font-weight:700;color:var(--teal);border-bottom:1px solid var(--border)">🟣 Elizabeth Line ★</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border)"><strong>40분</strong></td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);color:var(--amber);font-weight:700">£12.80<br><span style="font-size:9px;color:var(--hint)">(peak 17:20)</span></td>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">T4역 → TCR역 → 도보 3분</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">🔵 Piccadilly Line</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border)">55분</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);font-weight:600">£6.70</td>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">T4역 → Holborn → 도보 8분</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">🚕 Uber/Bolt</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border)">50~75분</td>
+                <td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);font-weight:600;color:var(--red)">£65~90</td>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border)">17:20 피크 → surge 가능성↑</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px">🖤 블랙캡</td>
+                <td style="padding:8px 10px;text-align:center">55~75분</td>
+                <td style="padding:8px 10px;text-align:center;font-weight:600;color:var(--red)">£85~120</td>
+                <td style="padding:8px 10px">T4 택시 승강장 · 러시아워 요금↑</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tr-note">⚠️ T4는 T2&3와 다른 역. T4 Elizabeth Line 탑승 → T2&3 경유 → TCR역. 17:20 도착은 런던 러시아워 피크 — Elizabeth Line 권장 (빠르고 요금 확정). 택시 surge 요금 유의.</div>
+      </div>
+
     </div>
 
     <!-- ▣ 숙소 -->
     <div id="p-hotel" class="panel">
-      <div class="content-title"><span class="content-title-icon">🏨</span>숙소 추천</div>
+      <div class="content-title"><span class="content-title-icon">🏨</span>숙소 — 예약 완료</div>
 
-      <div style="font-size:12px;color:var(--muted);margin-bottom:16px;padding:10px 14px;background:var(--card);border-radius:var(--r);border:1px solid var(--border);line-height:1.7">
-        📍 <strong>Bloomsbury / Holborn 지역</strong> — 영국박물관 도보권<br>
-        🚇 Elizabeth Line TCR역 5분 · Piccadilly Line Holborn역 5분 · 예매: <strong>Agoda</strong>
-      </div>
-
-      <div class="hotel-grid">
-        <div class="hc best">
-          <div class="hc-top">
-            <div class="hc-rank-row"><span class="hc-rank" style="color:var(--purple)">🥇 1순위</span><div class="hc-rating"><span class="stars">★★★★★</span><span class="rv">4.5</span><span class="rc">(3,752)</span></div></div>
-            <div class="hc-name">The Hoxton, Holborn</div>
-            <div class="hc-area">199-206 High Holborn, WC1V 7BD</div>
+      <!-- 예약 확정 배너 -->
+      <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;border-radius:var(--r);padding:16px;margin-bottom:14px">
+        <div style="font-size:11px;color:rgba(255,255,255,.5);letter-spacing:0.3px;margin-bottom:6px">✅ AGODA 예약 완료</div>
+        <div style="font-size:16px;font-weight:700;letter-spacing:-0.3px;margin-bottom:4px">래디슨 블루 호텔, 런던 토트넘 코트 로드</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.65);margin-bottom:12px">Radisson Blu Hotel, London Tottenham Court Road (formerly Kenilworth)</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:6px;margin-bottom:6px">
+          📍 97 Great Russell Street, London WC1B 3LB
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+          <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:9px;color:rgba(255,255,255,.5);letter-spacing:0.3px;margin-bottom:3px">체크인</div>
+            <div style="font-size:14px;font-weight:700">8월 9일 (일)</div>
+            <div style="font-size:10px;color:rgba(255,255,255,.6)">15:00~</div>
           </div>
-          <div class="hc-feats">
-            <div class="hc-feat"><span>🏛</span>영국박물관 도보 10분</div>
-            <div class="hc-feat"><span>🚇</span>TCR역(Elizabeth Line) 도보 5분</div>
-            <div class="hc-feat"><span>✨</span>세련된 부티크 디자인 · 로비 카페</div>
-          </div>
-          <div class="hc-bottom">
-            <div class="hc-links">
-              <a class="lbtn lb-map" href="https://www.google.com/maps/search/?api=1&query=The+Hoxton+Holborn+London" target="_blank">📍 구글맵</a>
-              <a class="lbtn lb-agoda" href="https://www.agoda.com/search?city=London&searchText=The+Hoxton+Holborn" target="_blank">🏨 Agoda</a>
-            </div>
-            <div class="hc-price p1">$200–280<span style="font-size:10px;color:var(--hint);font-weight:400">/박</span></div>
+          <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:9px;color:rgba(255,255,255,.5);letter-spacing:0.3px;margin-bottom:3px">체크아웃</div>
+            <div style="font-size:14px;font-weight:700">8월 13일 (목)</div>
+            <div style="font-size:10px;color:rgba(255,255,255,.6)">~11:00</div>
           </div>
         </div>
-
-        <div class="hc">
-          <div class="hc-top">
-            <div class="hc-rank-row"><span class="hc-rank" style="color:var(--teal)">🥈 2순위</span><div class="hc-rating"><span class="stars">★★★★☆</span><span class="rv">4.2</span><span class="rc">(1,489)</span></div></div>
-            <div class="hc-name">Bedford Hotel</div>
-            <div class="hc-area">83-95 Southampton Row, WC1B 4HD</div>
-          </div>
-          <div class="hc-feats">
-            <div class="hc-feat"><span>🏛</span>영국박물관 <strong>도보 5분</strong> — 최근접</div>
-            <div class="hc-feat"><span>💰</span>가성비 최고 · 전통 런던 분위기</div>
-          </div>
-          <div class="hc-bottom">
-            <div class="hc-links">
-              <a class="lbtn lb-map" href="https://www.google.com/maps/search/?api=1&query=Bedford+Hotel+Southampton+Row+London" target="_blank">📍 구글맵</a>
-              <a class="lbtn lb-agoda" href="https://www.agoda.com/search?city=London&searchText=Bedford+Hotel+London" target="_blank">🏨 Agoda</a>
-            </div>
-            <div class="hc-price p2">$150–220<span style="font-size:10px;color:var(--hint);font-weight:400">/박</span></div>
-          </div>
-        </div>
-
-        <div class="hc">
-          <div class="hc-top">
-            <div class="hc-rank-row"><span class="hc-rank" style="color:var(--blue)">🥉 3순위</span><div class="hc-rating"><span class="stars">★★★★☆</span><span class="rv">3.9</span><span class="rc">(2,701)</span></div></div>
-            <div class="hc-name">DoubleTree by Hilton West End</div>
-            <div class="hc-area">92 Southampton Row, WC1B 4BH</div>
-          </div>
-          <div class="hc-feats">
-            <div class="hc-feat"><span>🏛</span>영국박물관 도보 7분</div>
-            <div class="hc-feat"><span>🛡</span>힐튼 브랜드 · 멤버십 포인트 적립</div>
-          </div>
-          <div class="hc-bottom">
-            <div class="hc-links">
-              <a class="lbtn lb-map" href="https://www.google.com/maps/search/?api=1&query=DoubleTree+Hilton+London+West+End" target="_blank">📍 구글맵</a>
-              <a class="lbtn lb-agoda" href="https://www.agoda.com/search?city=London&searchText=DoubleTree+Hilton+London+West+End" target="_blank">🏨 Agoda</a>
-            </div>
-            <div class="hc-price p3">$200–300<span style="font-size:10px;color:var(--hint);font-weight:400">/박</span></div>
-          </div>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a href="https://www.google.com/maps/search/?api=1&query=Radisson+Blu+Hotel+97+Great+Russell+Street+London" target="_blank"
+             style="flex:1;background:rgba(255,255,255,.12);color:#fff;border-radius:7px;padding:8px;text-align:center;font-size:11px;font-weight:600">
+            📍 구글맵
+          </a>
+          <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-london-tottenham-court" target="_blank"
+             style="flex:1;background:rgba(255,255,255,.12);color:#fff;border-radius:7px;padding:8px;text-align:center;font-size:11px;font-weight:600">
+            🌐 공식홈
+          </a>
         </div>
       </div>
+
+      <!-- 예약 정보 카드 -->
+      <div class="sl">📋 Agoda 예약 정보</div>
+
+      <!-- 김지훈 예약 -->
+      <div class="tr-section" style="border-color:var(--blue);margin-bottom:10px">
+        <div class="tr-section-h">
+          <div class="tv-dot" style="background:#60a5fa;width:8px;height:8px;border-radius:50%"></div>
+          <div class="tr-section-title" style="color:var(--blue)">김지훈 예약</div>
+        </div>
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">예약번호</span><span class="tr-val" style="font-weight:700;font-size:14px;color:var(--text)">1750843495</span></div>
+          <div class="tr-row"><span class="tr-key">참조코드</span><span class="tr-val">0174062707</span></div>
+          <div class="tr-row"><span class="tr-key">체크인</span><span class="tr-val">2026.08.09 (일) 15:00</span></div>
+          <div class="tr-row"><span class="tr-key">체크아웃</span><span class="tr-val">2026.08.13 (목) 11:00</span></div>
+          <div class="tr-row"><span class="tr-key">박수</span><span class="tr-val"><strong>4박</strong></span></div>
+          <div class="tr-row"><span class="tr-key">객실</span><span class="tr-val">스탠다드 더블룸 × 1 (14㎡, 시티뷰)</span></div>
+          <div class="tr-row"><span class="tr-key">혜택</span><span class="tr-val">무료 Wi-Fi · 조식 포함</span></div>
+          <div class="tr-row"><span class="tr-key">투숙객</span><span class="tr-val">KIMJIHOON (성인 1명)</span></div>
+        </div>
+      </div>
+
+      <!-- 김영민·이예주 예약 -->
+      <div class="tr-section" style="border-color:var(--green)">
+        <div class="tr-section-h">
+          <div class="tv-dot" style="background:#34d399;width:8px;height:8px;border-radius:50%"></div>
+          <div class="tr-section-title" style="color:var(--green)">김영민 · 이예주 예약</div>
+        </div>
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">예약번호</span><span class="tr-val" style="font-weight:700;font-size:14px;color:var(--text)">1750846527</span></div>
+          <div class="tr-row"><span class="tr-key">참조코드</span><span class="tr-val">0174063460 / 0174063459</span></div>
+          <div class="tr-row"><span class="tr-key">체크인</span><span class="tr-val">2026.08.10 (월) 15:00</span></div>
+          <div class="tr-row"><span class="tr-key">체크아웃</span><span class="tr-val">2026.08.13 (목) 11:00</span></div>
+          <div class="tr-row"><span class="tr-key">박수</span><span class="tr-val"><strong>3박</strong></span></div>
+          <div class="tr-row"><span class="tr-key">객실</span><span class="tr-val">스탠다드 더블룸 × 2 (14㎡, 시티뷰)</span></div>
+          <div class="tr-row"><span class="tr-key">혜택</span><span class="tr-val">무료 Wi-Fi · 조식 포함</span></div>
+          <div class="tr-row"><span class="tr-key">투숙객</span><span class="tr-val">LEEYEJU 대표 (성인 2명)</span></div>
+        </div>
+      </div>
+
+      <!-- 호텔 위치 -->
+      <div class="sl">📍 호텔 위치 & 접근성</div>
+      <div class="tr-section">
+        <div class="tr-rows">
+          <div class="tr-row"><span class="tr-key">🏛 영국박물관</span><span class="tr-val" style="color:var(--purple);font-weight:700">도보 3분 (바로 옆!)</span></div>
+          <div class="tr-row"><span class="tr-key">🚇 TCR역</span><span class="tr-val">도보 3분 (Elizabeth Line · Central Line)</span></div>
+          <div class="tr-row"><span class="tr-key">🚇 Russell Sq역</span><span class="tr-val">도보 5분 (Piccadilly Line)</span></div>
+          <div class="tr-row"><span class="tr-key">🖼 내셔널 갤러리</span><span class="tr-val">도보 20분</span></div>
+          <div class="tr-row"><span class="tr-key">✈️ 히드로 T2</span><span class="tr-val">Elizabeth Line 35분</span></div>
+          <div class="tr-row"><span class="tr-key">✈️ 히드로 T4</span><span class="tr-val">Elizabeth Line 40분</span></div>
+        </div>
+      </div>
+
     </div>
 
     <!-- ▣ 현지 교통 -->
@@ -899,17 +1038,20 @@ a{color:inherit;text-decoration:none}
     <div id="p-places" class="panel">
       <div class="content-title"><span class="content-title-icon">📍</span>관광지 & 저장 명소</div>
 
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;font-size:10px">
+      <!-- 범례 -->
+      <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;font-size:10px">
         <span style="padding:2px 8px;background:var(--purple-bg);color:var(--purple);border-radius:4px;font-weight:600">★ 핵심</span>
         <span class="tk tk-free">🟢 무료</span>
         <span class="tk tk-outer">🔵 외부무료</span>
         <span class="tk tk-partial">🟡 일부유료</span>
         <span class="tk tk-paid">🔴 유료·예약권장</span>
-        <span style="padding:2px 8px;background:var(--bg);border:1px solid var(--border);border-radius:4px;font-weight:600;color:var(--muted)">Bloomsbury 숙소 기준 이동</span>
+        <span class="pa walk" style="font-size:10px">🚶 도보</span>
+        <span class="pa tube" style="font-size:10px">🚇 튜브</span>
       </div>
 
       <div class="places-grid">
-        <!-- 랜드마크 -->
+
+        <!-- ① 랜드마크 & 문화유산 -->
         <div class="pc">
           <div class="pc-h landmark">🗺 랜드마크 & 문화유산</div>
 
@@ -917,14 +1059,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🏛</span>
             <div class="pr-info">
               <div class="pr-name main">영국 박물관 ★</div>
-              <div class="pr-cat">박물관 · ★4.7 (173K)</div>
+              <div class="pr-cat">박물관 · ★4.3 (817)</div>
               <span class="tk tk-free">🟢 무료 · 사전예약 권장</span>
             </div>
             <div class="pr-right">
-              <span class="pa main-tag">도보 10분</span>
+              <span class="pa main-tag">도보 3분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=British+Museum+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.britishmuseum.org" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=British+Museum+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.britishmuseum.org" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -933,14 +1075,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🖼</span>
             <div class="pr-info">
               <div class="pr-name">내셔널 갤러리</div>
-              <div class="pr-cat">미술관 · ★4.8 (61K)</div>
+              <div class="pr-cat">미술관 · ★4.8 (62,701)</div>
               <span class="tk tk-free">🟢 무료 (상설전)</span>
             </div>
             <div class="pr-right">
               <span class="pa walk">도보 20분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=National+Gallery+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.nationalgallery.org.uk" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=National+Gallery+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.nationalgallery.org.uk" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -949,14 +1091,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">👑</span>
             <div class="pr-info">
               <div class="pr-name">버킹엄 궁전</div>
-              <div class="pr-cat">문화 랜드마크 · ★4.5 (191K)</div>
+              <div class="pr-cat">문화 랜드마크 · ★4.5 (193,846)</div>
               <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 10분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Buckingham+Palace+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.rct.uk/visit/the-state-rooms-buckingham-palace" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Buckingham+Palace+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.rct.uk/visit/the-state-rooms-buckingham-palace" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -965,14 +1107,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">⏰</span>
             <div class="pr-info">
               <div class="pr-name">빅 벤</div>
-              <div class="pr-cat">문화 랜드마크 · ★4.6 (98K)</div>
+              <div class="pr-cat">문화 랜드마크 · ★4.6 (99,549)</div>
               <span class="tk tk-outer">🔵 외부 무료 관람</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 10분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Big+Ben+Westminster+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.parliament.uk/bigben" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Big+Ben+Westminster+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.parliament.uk/bigben" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -981,14 +1123,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">⛪</span>
             <div class="pr-info">
               <div class="pr-name">웨스터민스터 사원</div>
-              <div class="pr-cat">★4.6 (51K)</div>
+              <div class="pr-cat">성공회 성당 · ★4.6 (51,862)</div>
               <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 10분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Westminster+Abbey+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.westminster-abbey.org" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Westminster+Abbey+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.westminster-abbey.org" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -997,14 +1139,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">⛩</span>
             <div class="pr-info">
               <div class="pr-name">세인트 폴 대성당</div>
-              <div class="pr-cat">★4.7 (55K)</div>
+              <div class="pr-cat">대성당 · ★4.7 (57,035)</div>
               <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 20분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=St+Paul%27s+Cathedral+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.stpauls.co.uk" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=St+Paul%27s+Cathedral+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.stpauls.co.uk" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1013,14 +1155,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🌉</span>
             <div class="pr-info">
               <div class="pr-name">타워 브리지</div>
-              <div class="pr-cat">★4.8 (181K)</div>
+              <div class="pr-cat">다리 · ★4.8 (184,107)</div>
               <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 25분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.towerbridge.org.uk" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.towerbridge.org.uk" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1029,14 +1171,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🏰</span>
             <div class="pr-info">
               <div class="pr-name">런던 탑</div>
-              <div class="pr-cat">★4.7 (119K)</div>
+              <div class="pr-cat">성곽 · ★4.7 (120,963)</div>
               <span class="tk tk-paid" style="background:#fecaca;color:#7f1d1d">🔴 유료 · 사전예약 필수</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 25분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tower+of+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.hrp.org.uk/tower-of-london/" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tower+of+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.hrp.org.uk/tower-of-london/" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1045,21 +1187,36 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🎡</span>
             <div class="pr-info">
               <div class="pr-name">런던 아이</div>
-              <div class="pr-cat">★4.5 (200K)</div>
+              <div class="pr-cat">관광 명소 · ★4.5 (203,119)</div>
               <span class="tk tk-paid" style="background:#fecaca;color:#7f1d1d">🔴 유료 · 사전예약 필수</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 15분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=London+Eye+South+Bank" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.londoneye.com" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=London+Eye+South+Bank" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.londoneye.com" target="_blank">🌐</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🌁</span>
+            <div class="pr-info">
+              <div class="pr-name">Millennium Bridge <span style="font-size:9px;background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:600">NEW</span></div>
+              <div class="pr-cat">보행자 현수교 · 테이트모던 연결</div>
+              <span class="tk tk-free">🟢 무료</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa tube">튜브 18분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Millennium+Bridge+London" target="_blank">🗺</a>
               </div>
             </div>
           </div>
 
         </div>
 
-        <!-- 미술 & 문화 -->
+        <!-- ② 미술 & 현대문화 -->
         <div class="pc">
           <div class="pc-h art">🎨 미술 & 현대문화</div>
 
@@ -1067,14 +1224,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🌊</span>
             <div class="pr-info">
               <div class="pr-name">테이트 모던</div>
-              <div class="pr-cat">미술관 · ★4.5 (82K)</div>
+              <div class="pr-cat">미술관 · ★4.5 (83,090)</div>
               <span class="tk tk-free">🟢 무료 (상설전)</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 15분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tate+Modern+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.tate.org.uk/visit/tate-modern" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Tate+Modern+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.tate.org.uk/visit/tate-modern" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1083,14 +1240,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🦕</span>
             <div class="pr-info">
               <div class="pr-name">자연사 박물관</div>
-              <div class="pr-cat">박물관 · ★4.6 (35K)</div>
+              <div class="pr-cat">박물관 · ★4.6 (37,306)</div>
               <span class="tk tk-free">🟢 무료</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 20분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Natural+History+Museum+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.nhm.ac.uk" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Natural+History+Museum+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.nhm.ac.uk" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1099,14 +1256,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🎭</span>
             <div class="pr-info">
               <div class="pr-name">바비칸 센터</div>
-              <div class="pr-cat">공연예술 · ★4.6 (4.6K)</div>
+              <div class="pr-cat">공연예술 · ★4.6 (4,936)</div>
               <span class="tk tk-partial">🟡 공연·전시 유료</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 20분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Barbican+Centre+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://www.barbican.org.uk" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Barbican+Centre+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://www.barbican.org.uk" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1115,14 +1272,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🔭</span>
             <div class="pr-info">
               <div class="pr-name">The Design Museum</div>
-              <div class="pr-cat">★4.4 (13K)</div>
+              <div class="pr-cat">박물관 · ★4.4 (14,092)</div>
               <span class="tk tk-partial">🟡 일부 무료 · 특별전 유료</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 25분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Design+Museum+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://designmuseum.org" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Design+Museum+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://designmuseum.org" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1131,14 +1288,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🖼</span>
             <div class="pr-info">
               <div class="pr-name">Moco Museum London</div>
-              <div class="pr-cat">현대미술관 · ★4.6 (2.9K)</div>
+              <div class="pr-cat">현대미술관 · ★4.6 (3,204)</div>
               <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
             </div>
             <div class="pr-right">
               <span class="pa walk">도보 15분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Moco+Museum+London" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://mocomuseum.com/london" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Moco+Museum+London" target="_blank">🗺</a>
+                <a class="webbtn" href="https://mocomuseum.com/london" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1147,14 +1304,14 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">💡</span>
             <div class="pr-info">
               <div class="pr-name">Lightroom</div>
-              <div class="pr-cat">아트 센터 · ★4.6 (1.9K)</div>
+              <div class="pr-cat">아트 센터 · ★4.6 (2,186)</div>
               <span class="tk tk-paid" style="background:#fecaca;color:#7f1d1d">🔴 유료 · 사전예약 필수</span>
             </div>
             <div class="pr-right">
               <span class="pa tube">튜브 15분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Lightroom+London+Kings+Cross" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://lightroom.london" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Lightroom+London+Kings+Cross" target="_blank">🗺</a>
+                <a class="webbtn" href="https://lightroom.london" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1162,15 +1319,15 @@ a{color:inherit;text-decoration:none}
           <div class="pr">
             <span class="pr-icon">🔥</span>
             <div class="pr-info">
-              <div class="pr-name">Frameless Immersive Art</div>
-              <div class="pr-cat">체험 · ★4.6 (5K)</div>
+              <div class="pr-name">Frameless</div>
+              <div class="pr-cat">몰입형 미술관 · ★4.6 (5,202)</div>
               <span class="tk tk-paid">🔴 유료 · 예약 권장</span>
             </div>
             <div class="pr-right">
               <span class="pa walk">도보 18분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Frameless+London+Marble+Arch" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://frameless.com" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Frameless+London+Marble+Arch" target="_blank">🗺</a>
+                <a class="webbtn" href="https://frameless.com" target="_blank">🌐</a>
               </div>
             </div>
           </div>
@@ -1179,27 +1336,335 @@ a{color:inherit;text-decoration:none}
             <span class="pr-icon">🌐</span>
             <div class="pr-info">
               <div class="pr-name">Outernet London</div>
-              <div class="pr-cat">미디어 · ★4.6 (2.8K)</div>
+              <div class="pr-cat">미디어 공간 · ★4.6 (2,991)</div>
               <span class="tk tk-free">🟢 무료 (야외 공간)</span>
             </div>
             <div class="pr-right">
               <span class="pa walk">도보 18분</span>
               <div class="pr-links">
-                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Outernet+London+Tottenham+Court+Road" target="_blank">🗺 지도</a>
-                <a class="webbtn" href="https://outernet.com" target="_blank">🌐 홈</a>
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Outernet+London+Tottenham+Court+Road" target="_blank">🗺</a>
+                <a class="webbtn" href="https://outernet.com" target="_blank">🌐</a>
               </div>
             </div>
           </div>
 
         </div>
+
+        <!-- ③ 맛집 & 카페 (신규) -->
+        <div class="pc" style="grid-column:1 / -1">
+          <div class="pc-h" style="background:var(--amber-bg);color:var(--amber)">☕ 맛집 & 카페</div>
+
+          <div class="pr">
+            <span class="pr-icon">🍽</span>
+            <div class="pr-info">
+              <div class="pr-name" style="font-weight:700">Victoria House Coffee & Food <span style="font-size:9px;background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:600">NEW</span></div>
+              <div class="pr-cat">영국 요리 · ★4.8 (8,021) · £10~20</div>
+              <span class="tk" style="background:var(--green-bg);color:var(--green)">강력 추천 · 영국박물관 인근</span>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 3분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Victoria+House+Coffee+Food+London+Bloomsbury" target="_blank">🗺</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">☕</span>
+            <div class="pr-info">
+              <div class="pr-name">Bay Leaf Cafe <span style="font-size:9px;background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:600">NEW</span></div>
+              <div class="pr-cat">카페 · ★4.6 (237) · £10~20</div>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 5분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Bay+Leaf+Cafe+London+Bloomsbury" target="_blank">🗺</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🥐</span>
+            <div class="pr-info">
+              <div class="pr-name">Maison Bertaux <span style="font-size:9px;background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:600">NEW</span></div>
+              <div class="pr-cat">프랑스 제과점 · ★4.3 (2,960) · Soho Greek St</div>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 15분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Maison+Bertaux+Greek+Street+Soho+London" target="_blank">🗺</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🍜</span>
+            <div class="pr-info">
+              <div class="pr-name">Viet Food <span style="font-size:9px;background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:600">NEW</span></div>
+              <div class="pr-cat">베트남 요리 · ★4.4 (4,993) · £10~20 · Wardour St</div>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 18분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Viet+Food+Wardour+Street+London+Soho" target="_blank">🗺</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ④ 편의시설 (신규) -->
+        <div class="pc" style="grid-column:1 / -1">
+          <div class="pc-h" style="background:#f0fdf4;color:var(--green)">🛒 편의시설 — 숙소 주변 마트</div>
+
+          <div class="pr">
+            <span class="pr-icon">🛍</span>
+            <div class="pr-info">
+              <div class="pr-name">M&S Simply Food <span style="font-size:9px;background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:600">NEW</span></div>
+              <div class="pr-cat">슈퍼마켓 · ★4.2 (501) · 샌드위치·도시락 구매 추천</div>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 5분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=M%26S+Simply+Food+Bloomsbury+London" target="_blank">🗺</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr">
+            <span class="pr-icon">🛒</span>
+            <div class="pr-info">
+              <div class="pr-name">Sainsbury's Local <span style="font-size:9px;background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:600">NEW</span></div>
+              <div class="pr-cat">슈퍼마켓 · 24시간 운영 지점 다수 · 생수·간식·음료</div>
+            </div>
+            <div class="pr-right">
+              <span class="pa walk">도보 5분</span>
+              <div class="pr-links">
+                <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sainsbury%27s+Local+Holborn+London" target="_blank">🗺</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- /places-grid -->
+    </div>
+
+
+
+    <!-- ▣ 날씨 & 일출일몰 -->
+    <div id="p-weather" class="panel">
+      <div class="content-title"><span class="content-title-icon">☀️</span>날씨 & 일출일몰 — 2026년 8월</div>
+
+      <!-- 일출/일몰 테이블 -->
+      <div class="sl">🌅 출장기간 일출 · 일몰 시간 (BST 런던 현지)</div>
+      <div style="overflow-x:auto;border-radius:var(--r);border:1px solid var(--border);margin-bottom:14px">
+        <table class="sun-table">
+          <thead>
+            <tr>
+              <th>날짜</th>
+              <th>🌅 일출</th>
+              <th>🌇 일몰</th>
+              <th>낮 길이</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8월 9일 (일) <span style="font-size:10px;color:var(--blue)">김지훈 도착</span></td>
+              <td><strong>05:39</strong></td>
+              <td><strong>20:30</strong></td>
+              <td>14h 51m</td>
+              <td style="font-size:10px;color:var(--muted)">황혼 21:00</td>
+            </tr>
+            <tr>
+              <td>8월 10일 (월) <span style="font-size:10px;color:var(--green)">김영민·이예주 도착</span></td>
+              <td><strong>05:41</strong></td>
+              <td><strong>20:27</strong></td>
+              <td>14h 46m</td>
+              <td style="font-size:10px;color:var(--muted)">황혼 20:57</td>
+            </tr>
+            <tr>
+              <td>8월 11일 (화)</td>
+              <td><strong>05:43</strong></td>
+              <td><strong>20:25</strong></td>
+              <td>14h 42m</td>
+              <td style="font-size:10px;color:var(--muted)">황혼 20:54</td>
+            </tr>
+            <tr>
+              <td>8월 12일 (수)</td>
+              <td><strong>05:46</strong></td>
+              <td><strong>20:22</strong></td>
+              <td>14h 36m</td>
+              <td style="font-size:10px;color:var(--purple)">🌑 신월 (New Moon) 18:37</td>
+            </tr>
+            <tr>
+              <td>8월 13일 (목) <span style="font-size:10px;color:var(--red)">체크아웃·귀국</span></td>
+              <td><strong>05:48</strong></td>
+              <td><strong>20:20</strong></td>
+              <td>14h 32m</td>
+              <td style="font-size:10px;color:var(--muted)">황혼 20:51</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
+      <div style="background:var(--teal-bg);border-radius:8px;padding:9px 13px;font-size:11px;color:var(--teal);margin-bottom:18px;line-height:1.6">
+        💡 <strong>8월 런던은 저녁 8시 20분까지 환합니다!</strong> 한국의 8월 일몰(19:45)보다 약 35분 더 길어 저녁 관광까지 여유 있게 즐길 수 있습니다. 체크아웃 당일(13일)도 오전부터 충분한 관광 시간 확보 가능.
+      </div>
+
+      <!-- 8월 런던 날씨 핵심 수치 -->
+      <div class="sl">🌡 8월 런던 날씨 핵심 수치</div>
+      <div class="wgrid-4" style="margin-bottom:14px">
+        <div class="wstat">
+          <div class="wstat-val" style="color:#f97316">23°C</div>
+          <div class="wstat-label">평균 최고기온</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-val" style="color:var(--blue)">15°C</div>
+          <div class="wstat-label">평균 최저기온</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-val" style="color:var(--teal)">70%</div>
+          <div class="wstat-label">평균 습도</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-val" style="color:var(--amber)">45mm</div>
+          <div class="wstat-label">월 강수량 (8일)</div>
+        </div>
+      </div>
+
+      <!-- 한국 vs 런던 8월 비교 -->
+      <div class="sl">🇰🇷 vs 🇬🇧 8월 날씨 한국·런던 비교</div>
+      <div style="overflow-x:auto;border-radius:var(--r);border:1px solid var(--border);margin-bottom:14px">
+        <table class="sun-table">
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>🇰🇷 서울 8월</th>
+              <th>🇬🇧 런던 8월</th>
+              <th>차이</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>평균 최고기온</td>
+              <td style="color:#ef4444;font-weight:700">29°C</td>
+              <td style="color:#f97316;font-weight:700">23°C</td>
+              <td style="font-size:11px">서울 +6°C 더 덥다</td>
+            </tr>
+            <tr>
+              <td>평균 최저기온</td>
+              <td style="color:#f97316;font-weight:700">22°C</td>
+              <td style="color:var(--blue);font-weight:700">15°C</td>
+              <td style="font-size:11px">서울 +7°C 더 따뜻</td>
+            </tr>
+            <tr>
+              <td>월 강수량</td>
+              <td style="color:#ef4444;font-weight:700">289mm</td>
+              <td style="color:var(--teal);font-weight:700">45mm</td>
+              <td style="font-size:11px">서울 <strong>6.4배</strong> 더 많은 비</td>
+            </tr>
+            <tr>
+              <td>비 오는 날수</td>
+              <td style="color:#ef4444;font-weight:700">13일/월</td>
+              <td style="color:var(--teal);font-weight:700">8일/월</td>
+              <td style="font-size:11px">서울 5일 더 많음</td>
+            </tr>
+            <tr>
+              <td>평균 습도</td>
+              <td style="color:#f97316;font-weight:700">78~80%</td>
+              <td style="color:var(--teal);font-weight:700">70~75%</td>
+              <td style="font-size:11px">런던이 훨씬 쾌적</td>
+            </tr>
+            <tr>
+              <td>일조량</td>
+              <td>6.6시간/일</td>
+              <td>6~7시간/일</td>
+              <td style="font-size:11px">비슷</td>
+            </tr>
+            <tr>
+              <td>태풍·폭염</td>
+              <td style="color:#ef4444">폭염·태풍 가능</td>
+              <td style="color:var(--teal)">거의 없음</td>
+              <td style="font-size:11px">런던이 안전</td>
+            </tr>
+            <tr style="background:var(--purple-bg)">
+              <td style="font-weight:700;color:var(--purple)">종합 체감</td>
+              <td style="color:#ef4444;font-weight:600">덥고 습함·장마</td>
+              <td style="color:var(--teal);font-weight:700">✅ 쾌적한 여름</td>
+              <td style="font-size:10px;color:var(--purple)">야외활동 런던이 최적</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 연간 기온 비교 차트 -->
+      <div class="sl">📊 연간 월별 기온 비교 (서울 vs 런던)</div>
+      <div style="background:var(--card);border-radius:var(--r);border:1px solid var(--border);padding:14px;margin-bottom:14px">
+        <div style="display:flex;gap:12px;font-size:10px;font-weight:600;margin-bottom:10px">
+          <span style="display:flex;align-items:center;gap:4px"><span style="width:12px;height:6px;background:#ef4444;border-radius:2px;opacity:.6;display:inline-block"></span>서울 최고</span>
+          <span style="display:flex;align-items:center;gap:4px"><span style="width:12px;height:6px;background:#f97316;border-radius:2px;display:inline-block"></span>런던 최고</span>
+          <span style="display:flex;align-items:center;gap:4px"><span style="width:12px;height:6px;background:var(--purple);border-radius:2px;display:inline-block"></span>출장 기간</span>
+        </div>
+        <div class="wbar-wrap">
+          <!-- month: [월, 서울최고, 런던최고, 출장여부] baseline=-10, range=45 -->
+          <!-- bar width = (temp+10)/45 * 100% -->
+          <!-- Seoul Jan:-1, Feb:2, Mar:8, Apr:16, May:22, Jun:27, Jul:29, Aug:29, Sep:25, Oct:18, Nov:9, Dec:2 -->
+          <!-- London Jan:8, Feb:8, Mar:11, Apr:14, May:17, Jun:21, Jul:23, Aug:23, Sep:20, Oct:16, Nov:11, Dec:8 -->
+          <div class="wbar-row"><span class="wbar-label">1월</span><span class="wbar-month">Jan</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:20%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:40%;background:#f97316"></div></div><span class="wbar-temps">-1°/8°</span></div>
+          <div class="wbar-row"><span class="wbar-label">2월</span><span class="wbar-month">Feb</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:26.7%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:40%;background:#f97316"></div></div><span class="wbar-temps">2°/8°</span></div>
+          <div class="wbar-row"><span class="wbar-label">3월</span><span class="wbar-month">Mar</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:40%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:46.7%;background:#f97316"></div></div><span class="wbar-temps">8°/11°</span></div>
+          <div class="wbar-row"><span class="wbar-label">4월</span><span class="wbar-month">Apr</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:57.8%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:53.3%;background:#f97316"></div></div><span class="wbar-temps">16°/14°</span></div>
+          <div class="wbar-row"><span class="wbar-label">5월</span><span class="wbar-month">May</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:71.1%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:60%;background:#f97316"></div></div><span class="wbar-temps">22°/17°</span></div>
+          <div class="wbar-row"><span class="wbar-label">6월</span><span class="wbar-month">Jun</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:82.2%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:68.9%;background:#f97316"></div></div><span class="wbar-temps">27°/21°</span></div>
+          <div class="wbar-row"><span class="wbar-label">7월</span><span class="wbar-month">Jul</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:86.7%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:73.3%;background:#f97316"></div></div><span class="wbar-temps">29°/23°</span></div>
+          <div class="wbar-row"><span class="wbar-label">8월</span><span class="wbar-month" style="color:var(--purple);font-weight:700">✈ Aug</span><div class="wbar-track"><div class="wbar-seoul wbar-aug" style="left:0;width:86.7%;background:#ef4444"></div><div class="wbar-london wbar-aug" style="left:0;width:73.3%;background:var(--purple)"></div></div><span class="wbar-temps" style="color:var(--purple);font-weight:700">29°/23°</span></div>
+          <div class="wbar-row"><span class="wbar-label">9월</span><span class="wbar-month">Sep</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:77.8%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:66.7%;background:#f97316"></div></div><span class="wbar-temps">25°/20°</span></div>
+          <div class="wbar-row"><span class="wbar-label">10월</span><span class="wbar-month">Oct</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:62.2%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:57.8%;background:#f97316"></div></div><span class="wbar-temps">18°/16°</span></div>
+          <div class="wbar-row"><span class="wbar-label">11월</span><span class="wbar-month">Nov</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:42.2%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:46.7%;background:#f97316"></div></div><span class="wbar-temps">9°/11°</span></div>
+          <div class="wbar-row"><span class="wbar-label">12월</span><span class="wbar-month">Dec</span><div class="wbar-track"><div class="wbar-seoul" style="left:0;width:26.7%;background:#ef4444"></div><div class="wbar-london" style="left:0;width:40%;background:#f97316"></div></div><span class="wbar-temps">2°/8°</span></div>
+        </div>
+        <div style="font-size:10px;color:var(--hint);margin-top:8px;text-align:center">※ 막대 길이 = 기온 상대 비교 / ✈ 출장 기간(8월) 보라색 강조</div>
+      </div>
+
+      <!-- 옷차림 & 준비물 -->
+      <div class="sl">👔 8월 런던 옷차림 & 준비 체크</div>
+      <div class="clothing-grid" style="margin-bottom:10px">
+        <div class="citem">
+          <span class="cicon">👕</span>
+          <div><div class="ctitle">낮 (23°C)</div><div class="cdesc">반팔 티셔츠·얇은 셔츠로 충분. 실내 에어컨이 약해 한국보다 덥게 느껴질 수 있음</div></div>
+        </div>
+        <div class="citem">
+          <span class="cicon">🧥</span>
+          <div><div class="ctitle">아침·저녁 (15°C)</div><div class="cdesc">가디건 또는 얇은 재킷 필수. 일교차 8°C로 체온 조절 중요</div></div>
+        </div>
+        <div class="citem">
+          <span class="cicon">☂️</span>
+          <div><div class="ctitle">우산 필수</div><div class="cdesc">8일/월 간헐적 소나기 예상. 접이식 소형 우산 또는 경량 우비 추천</div></div>
+        </div>
+        <div class="citem">
+          <span class="cicon">👟</span>
+          <div><div class="ctitle">편한 신발</div><div class="cdesc">하루 15,000~20,000보 예상. 방수 기능 있는 워킹화 또는 스니커즈 추천</div></div>
+        </div>
+      </div>
+
+      <!-- 주의사항 -->
+      <div style="background:var(--amber-bg);border-radius:var(--r);border:1px solid #d97706;padding:12px 14px;font-size:12px;color:var(--amber);line-height:1.7">
+        ⚠️ <strong>8월 성수기 주의사항</strong><br>
+        · 런던 8월은 최대 관광 성수기 → 주요 명소 대기줄 매우 김<br>
+        · 타워 브리지·런던 아이·런던 탑은 <strong>사전예약 필수</strong> (현장 대기 1~2시간)<br>
+        · 날씨는 쾌적하지만 급격한 소나기 잦음 → 야외 일정 여유 있게 계획<br>
+        · 한국보다 자외선 차단제 필요성 낮지만 흐린 날도 UV 주의
+      </div>
+
     </div>
 
   </div><!-- /content -->
 </main>
 </div><!-- /page -->
 <script>
-var panels=['eta','flight','hotel','transport','places'];
+var panels=['eta','flight','hotel','transport','places','weather'];
 
 /* ── 핵심 수정: topbar 실제 높이 동적 측정 ── */
 function fixTopPadding(){
@@ -1225,8 +1690,8 @@ function switchPanel(id){
 }
 
 function switchDay(id){
-  ['d27','d28'].forEach(function(d){document.getElementById(d).classList.toggle('on',d===id)});
-  document.querySelectorAll('.dtab').forEach(function(t,i){t.classList.toggle('on',(i===0&&id==='d27')||(i===1&&id==='d28'))});
+  ['djh','dym'].forEach(function(d){var el=document.getElementById(d);if(el)el.classList.toggle('on',d===id)});
+  document.querySelectorAll('.dtab').forEach(function(t,i){t.classList.toggle('on',(i===0&&id==='djh')||(i===1&&id==='dym'))});
 }
 
 function updateCgGrid(){
@@ -1258,4 +1723,5 @@ fixTopPadding();
 updateCgGrid();
 </script>
 </body>
+
 </html>
