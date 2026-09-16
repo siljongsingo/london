@@ -407,12 +407,12 @@ a{color:inherit;text-decoration:none}
     <div class="sb-tv"><div class="sb-dot" style="background:#34d399"></div><span><strong style="color:#6ee7b7">김영민·이예주·최성준·김재헌</strong> — 9/28 OZ521</span></div>
   </div>
   <nav class="sb-nav">
-    <button class="sb-btn on" onclick="switchPanel('eta')"><span class="sb-btn-icon">🇬🇧</span>ETA 신청</button>
-    <button class="sb-btn" onclick="switchPanel('flight')"><span class="sb-btn-icon">✈️</span>항공편</button>
+    <button class="sb-btn on" onclick="switchPanel('flight')"><span class="sb-btn-icon">✈️</span>항공편</button>
     <button class="sb-btn" onclick="switchPanel('hotel')"><span class="sb-btn-icon">🏨</span>숙소</button>
     <button class="sb-btn" onclick="switchPanel('transport')"><span class="sb-btn-icon">🚇</span>현지 교통</button>
     <button class="sb-btn" onclick="switchPanel('places')"><span class="sb-btn-icon">📍</span>관광지</button>
     <button class="sb-btn" onclick="switchPanel('weather')"><span class="sb-btn-icon">☀️</span>날씨 & 일출</button>
+    <button class="sb-btn" onclick="switchPanel('eta')"><span class="sb-btn-icon">🇬🇧</span>ETA 신청</button>
   </nav>
   <div class="sb-footer">d'strict · London Business Trip 2026</div>
 </aside>
@@ -444,15 +444,15 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="tb-travelers">
       <div class="tb-tv"><div class="tb-dot" style="background:#60a5fa"></div><strong style="color:#93c5fd">김지훈</strong><span style="opacity:.7"> 9/27출발</span></div>
-      <div class="tb-tv"><div class="tb-dot" style="background:#34d399"></div><strong style="color:#6ee7b7">4인팀</strong><span style="opacity:.7"> 9/28출발</span></div>
+      <div class="tb-tv"><div class="tb-dot" style="background:#34d399"></div><strong style="color:#6ee7b7">4인</strong><span style="opacity:.7"> 9/28출발</span></div>
     </div>
     <nav class="tb-nav">
-      <button class="tb-btn on" onclick="switchPanel('eta')"><span class="tb-btn-icon">🇬🇧</span><span class="tb-btn-label">ETA</span></button>
-      <button class="tb-btn" onclick="switchPanel('flight')"><span class="tb-btn-icon">✈️</span><span class="tb-btn-label">항공</span></button>
+      <button class="tb-btn on" onclick="switchPanel('flight')"><span class="tb-btn-icon">✈️</span><span class="tb-btn-label">항공</span></button>
       <button class="tb-btn" onclick="switchPanel('hotel')"><span class="tb-btn-icon">🏨</span><span class="tb-btn-label">숙소</span></button>
       <button class="tb-btn" onclick="switchPanel('transport')"><span class="tb-btn-icon">🚇</span><span class="tb-btn-label">교통</span></button>
       <button class="tb-btn" onclick="switchPanel('places')"><span class="tb-btn-icon">📍</span><span class="tb-btn-label">관광지</span></button>
       <button class="tb-btn" onclick="switchPanel('weather')"><span class="tb-btn-icon">☀️</span><span class="tb-btn-label">날씨</span></button>
+      <button class="tb-btn" onclick="switchPanel('eta')"><span class="tb-btn-icon">🇬🇧</span><span class="tb-btn-label">ETA</span></button>
     </nav>
   </div>
 
@@ -460,7 +460,7 @@ a{color:inherit;text-decoration:none}
   <div class="content">
 
     <!-- ▣ ETA -->
-    <div id="p-eta" class="panel on">
+    <div id="p-eta" class="panel">
       <div class="content-title"><span class="content-title-icon">🇬🇧</span>UK ETA 신청 안내</div>
 
       <div class="eta-hero">
@@ -510,7 +510,7 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <!-- ▣ 항공 -->
-    <div id="p-flight" class="panel">
+    <div id="p-flight" class="panel on">
       <div class="content-title"><span class="content-title-icon">✈️</span>항공편 스케줄 & 예약 정보</div>
 
       <!-- 출장자 탭 -->
@@ -519,7 +519,7 @@ a{color:inherit;text-decoration:none}
           🔵 김지훈 <span style="color:rgba(255,255,255,.7);font-size:10px">DL3F6U</span><span class="pdiff">9/27(일) 출발 · OZ521</span>
         </button>
         <button class="dtab" onclick="switchDay('dym')">
-          🟢 이예주·최성준·김영민 <span style="color:rgba(255,255,255,.7);font-size:10px">DKXZEW</span><span class="pdiff">9/28(월) 출발 · OZ521</span>
+          🟢 이예주·최성준·김영민·김재헌<span class="pdiff">9/28(월) 출발 · OZ521 · DKXZEW+DZGGMF</span>
         </button>
       </div>
 
@@ -600,30 +600,52 @@ a{color:inherit;text-decoration:none}
 
         <!-- 예약 요약 배너 -->
         <div style="background:linear-gradient(135deg,#0f2d1a,#1a4a2e);color:#fff;border-radius:var(--r);padding:14px 16px;margin-bottom:12px">
-          <div style="font-size:10px;color:rgba(255,255,255,.5);letter-spacing:0.4px;margin-bottom:6px">✅ 아시아나항공 예약 확정 · 3명 (이예주·최성준·김영민)</div>
-          <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:baseline">
-            <div><div style="font-size:10px;color:rgba(255,255,255,.5)">예약번호</div><div style="font-size:20px;font-weight:800;letter-spacing:1px;color:#6ee7b7">DKXZEW</div></div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);letter-spacing:0.4px;margin-bottom:8px">✅ 아시아나항공 예약 확정 · 4명 · OZ521/OZ522 동일 편명</div>
+
+          <!-- DKXZEW -->
+          <div style="margin-bottom:10px">
+            <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:6px">
+              <div><div style="font-size:10px;color:rgba(255,255,255,.5)">예약번호</div><div style="font-size:18px;font-weight:800;letter-spacing:1px;color:#6ee7b7">DKXZEW</div></div>
+              <div style="align-self:flex-end"><div style="font-size:11px;color:rgba(255,255,255,.7)">총 결제: <strong style="color:#fbbf24">KRW 6,395,700</strong></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr;gap:5px">
+              <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;font-size:11px">
+                <div style="color:rgba(255,255,255,.5);font-size:10px;margin-bottom:3px">LEE/YEJU (이예주)</div>
+                <div style="font-weight:600;color:rgba(255,255,255,.9)">항공권: 9882492322117</div>
+              </div>
+              <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;font-size:11px">
+                <div style="color:rgba(255,255,255,.5);font-size:10px;margin-bottom:3px">CHOI/SEONGJUN (최성준)</div>
+                <div style="font-weight:600;color:rgba(255,255,255,.9)">항공권: 9882492322118</div>
+              </div>
+              <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;font-size:11px">
+                <div style="color:rgba(255,255,255,.5);font-size:10px;margin-bottom:3px">KIM/YOUNGMIN (김영민)</div>
+                <div style="font-weight:600;color:rgba(255,255,255,.9)">항공권: 9882492322119</div>
+              </div>
+            </div>
           </div>
-          <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,.7)">총 결제금액: <strong style="color:#fbbf24">KRW 6,395,700</strong></div>
-          <!-- 탑승자별 항공권 번호 -->
-          <div style="margin-top:10px;display:grid;grid-template-columns:1fr;gap:6px">
-            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;font-size:11px">
-              <div style="color:rgba(255,255,255,.5);font-size:10px;margin-bottom:3px">LEE/YEJU (이예주)</div>
-              <div style="font-weight:600;color:rgba(255,255,255,.9)">항공권: 9882492322117</div>
+
+          <!-- 구분선 -->
+          <div style="height:1px;background:rgba(255,255,255,.12);margin:8px 0"></div>
+
+          <!-- DZGGMF (김재헌) -->
+          <div style="margin-top:8px">
+            <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:6px">
+              <div><div style="font-size:10px;color:rgba(255,255,255,.5)">예약번호 (별도)</div><div style="font-size:18px;font-weight:800;letter-spacing:1px;color:#6ee7b7">DZGGMF</div></div>
+              <div style="align-self:flex-end"><div style="font-size:11px;color:rgba(255,255,255,.7)">총 결제: <strong style="color:#fbbf24">KRW 1,857,400</strong></div></div>
             </div>
             <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;font-size:11px">
-              <div style="color:rgba(255,255,255,.5);font-size:10px;margin-bottom:3px">CHOI/SEONGJUN (최성준)</div>
-              <div style="font-weight:600;color:rgba(255,255,255,.9)">항공권: 9882492322118</div>
-            </div>
-            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;font-size:11px">
-              <div style="color:rgba(255,255,255,.5);font-size:10px;margin-bottom:3px">KIM/YOUNGMIN (김영민)</div>
-              <div style="font-weight:600;color:rgba(255,255,255,.9)">항공권: 9882492322119</div>
+              <div style="color:rgba(255,255,255,.5);font-size:10px;margin-bottom:3px">KIM/JAEHUN (김재헌)</div>
+              <div style="font-weight:600;color:rgba(255,255,255,.9)">항공권: 9882492332761</div>
+              <div style="margin-top:5px;display:flex;gap:12px;font-size:10px;color:rgba(255,255,255,.7)">
+                <span>💺 출국 좌석: <strong style="color:#fff">30G</strong></span>
+                <span>💺 귀국 좌석: <strong style="color:#fff">31C</strong></span>
+              </div>
             </div>
           </div>
         </div>
 
         <div style="background:var(--green-bg);color:var(--green);font-size:11px;font-weight:600;padding:7px 12px;border-radius:8px;margin-bottom:12px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-          <span>👤 이예주 · 최성준 · 김영민 (3명)</span><span style="opacity:.6">|</span>
+          <span>👤 이예주 · 최성준 · 김영민 · 김재헌 (4명)</span><span style="opacity:.6">|</span>
           <span>인천 <strong>제2터미널</strong> → 히드로 <strong>T2</strong></span>
         </div>
 
@@ -645,7 +667,7 @@ a{color:inherit;text-decoration:none}
             <div style="font-size:11px;color:var(--muted);line-height:1.7">
               📅 <strong>9월 28일 (월)</strong><br>
               🏢 인천 <strong>제2터미널</strong> (체크인 05:00~06:00)<br>
-              💺 좌석 선택 완료 (부가서비스 구매)<br>
+              💺 이예주·최성준·김영민 좌석 선택 완료 · 김재헌 <strong>30G</strong><br>
               🛬 히드로 <strong>T2</strong> 도착
             </div>
             <div class="fc-arrival ok">✅ 14:20 도착<br>입국장 여유</div>
@@ -669,7 +691,7 @@ a{color:inherit;text-decoration:none}
             <div style="font-size:11px;color:var(--muted);line-height:1.7">
               📅 <strong>10월 1일 (목) 출발 → 10월 2일 (금) 도착</strong><br>
               🛫 히드로 <strong>T2</strong> 출발<br>
-              💺 좌석 선택 완료 (부가서비스 구매)<br>
+              💺 이예주·최성준·김영민 좌석 선택 완료 · 김재헌 <strong>31C</strong><br>
               🏢 인천 <strong>제2터미널</strong> 도착
             </div>
             <div class="fc-arrival neutral">🟡 16:35 출발</div>
@@ -680,10 +702,10 @@ a{color:inherit;text-decoration:none}
           🏨 숙소 체크아웃 10/1 (목) 11:00 → 공항 이동 (히드로 T2, OZ522 16:35 출발)
         </div>
 
-        <!-- 김재헌 별도 안내 -->
-        <div style="background:var(--amber-bg);border:1px solid #d97706;border-radius:8px;padding:9px 12px;font-size:11px;color:var(--amber);margin-top:10px;display:flex;gap:7px">
-          <span style="flex-shrink:0">⚠️</span>
-          <span><strong>김재헌</strong> — 이 예약(DKXZEW)에 미포함. 별도 예약 또는 추가 예약 필요 여부 확인 요망.</span>
+        <!-- 김재헌 확인 완료 -->
+        <div style="background:var(--teal-bg);border:1px solid #0d9488;border-radius:8px;padding:9px 12px;font-size:11px;color:var(--teal);margin-top:10px;display:flex;gap:7px">
+          <span style="flex-shrink:0">✅</span>
+          <span><strong>김재헌</strong> — 별도 예약 <strong>DZGGMF</strong> 확정 완료. 동일 편명(OZ521/OZ522) 탑승.</span>
         </div>
       </div>
 
@@ -1590,7 +1612,7 @@ a{color:inherit;text-decoration:none}
 </main>
 </div><!-- /page -->
 <script>
-var panels=['eta','flight','hotel','transport','places','weather'];
+var panels=['flight','hotel','transport','places','weather','eta'];
 
 /* ── 핵심 수정: topbar 실제 높이 동적 측정 ── */
 function fixTopPadding(){
